@@ -36,7 +36,25 @@ export default function Navbar() {
     return () => { document.body.style.overflow = ""; };
   }, [mobileMenuOpen]);
 
-  const closeMobile = () => setMobileMenuOpen(false);
+  const handleMobileClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    setMobileMenuOpen(false);
+    
+    // Unlock body scroll immediately so the page can scroll
+    document.body.style.overflow = "";
+    
+    // Allow the menu close animation to begin before scrolling
+    setTimeout(() => {
+      if (href.startsWith("#")) {
+        const el = document.querySelector(href);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth" });
+        }
+      } else {
+        window.location.href = href;
+      }
+    }, 150);
+  };
 
   return (
     <motion.nav
@@ -177,7 +195,7 @@ export default function Navbar() {
                 <a
                   key={link.href}
                   href={link.href}
-                  onClick={closeMobile}
+                  onClick={(e) => handleMobileClick(e, link.href)}
                   style={{
                     display: "block",
                     padding: "0.75rem 0",
