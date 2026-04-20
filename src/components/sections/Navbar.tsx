@@ -120,7 +120,6 @@ export default function Navbar() {
             id="navbar-mobile-toggle"
             className="mobile-only"
             style={{
-              display: "flex",
               flexDirection: "column",
               alignItems: "center",
               justifyContent: "center",

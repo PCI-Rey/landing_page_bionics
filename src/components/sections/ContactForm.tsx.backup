@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 
 /* ── Data ─────────────────────────────────────────────────── */
@@ -76,14 +76,6 @@ export default function ContactForm() {
   });
   const [submitted, setSubmitted] = useState(false);
   const [focused, setFocused]     = useState<string | null>(null);
-  const [isMobile, setIsMobile]   = useState(false);
-
-  useEffect(() => {
-    const check = () => setIsMobile(window.innerWidth < 768);
-    check();
-    window.addEventListener("resize", check);
-    return () => window.removeEventListener("resize", check);
-  }, []);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
@@ -104,8 +96,8 @@ export default function ContactForm() {
       style={{
         position: "relative",
         backgroundColor: "#FFFFFF",
-        paddingTop: isMobile ? "3.5rem" : "6rem",
-        paddingBottom: isMobile ? "4rem" : "8rem",
+        paddingTop: "6rem",
+        paddingBottom: "8rem",
         overflow: "hidden",
       }}
     >
@@ -117,7 +109,7 @@ export default function ContactForm() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          style={{ textAlign: "center", marginBottom: isMobile ? "2.5rem" : "4rem" }}
+          style={{ textAlign: "center", marginBottom: "4rem" }}
         >
           <span style={{
             display: "inline-block",
@@ -133,9 +125,9 @@ export default function ContactForm() {
           <h2
             id="contact-heading"
             style={{
-              fontSize: "clamp(1.75rem, 4.5vw, 3.5rem)",
+              fontSize: "clamp(2rem, 4.5vw, 3.5rem)",
               fontWeight: 800, letterSpacing: "-0.02em",
-              lineHeight: 1.1, color: "#0D0D0D", marginBottom: "1.25rem",
+              lineHeight: 1.1, color: "#0D0D0D", marginBottom: "1.5rem",
             }}
           >
             Contact Us &{" "}
@@ -150,9 +142,7 @@ export default function ContactForm() {
 
           <p style={{
             maxWidth: "42ch", marginInline: "auto",
-            fontSize: isMobile ? "1rem" : "1.125rem",
-            color: "#4B5563", lineHeight: 1.7,
-            paddingInline: isMobile ? "0.5rem" : 0,
+            fontSize: "1.125rem", color: "#4B5563", lineHeight: 1.7,
           }}>
             Bionics is committed to helping you find the perfect solution for your business.
           </p>
@@ -161,8 +151,8 @@ export default function ContactForm() {
         {/* ── Split Layout ─────────────────────────────── */}
         <div style={{
           display: "grid",
-          gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr",
-          gap: isMobile ? "2rem" : "3rem",
+          gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+          gap: "3rem",
           alignItems: "start",
         }}>
 
@@ -178,11 +168,11 @@ export default function ContactForm() {
               position: "relative",
               backgroundColor: "#FFFFFF",
               border: "1px solid #E8EDF5",
-              borderLeft: "none",
-              borderRadius: isMobile ? 16 : 24,
-              padding: isMobile ? "1.5rem" : "2.5rem",
+              borderLeft: "none", // Will use absolute bar
+              borderRadius: 24,
+              padding: "2.5rem",
               boxShadow: "0 4px 32px rgba(0,0,0,0.05)",
-              marginBottom: isMobile ? "1.5rem" : "2rem",
+              marginBottom: "2rem",
               overflow: "hidden",
             }}>
               {/* Gradient Accent Bar on the left */}
@@ -196,8 +186,7 @@ export default function ContactForm() {
               }} />
 
               <h3 style={{
-                fontSize: isMobile ? "1.25rem" : "1.5rem",
-                fontWeight: 800,
+                fontSize: "1.5rem", fontWeight: 800,
                 color: "#0D0D0D", marginBottom: "1rem",
               }}>
                 Why Choose{" "}
@@ -210,9 +199,8 @@ export default function ContactForm() {
                 </span>?
               </h3>
               <p style={{
-                fontSize: isMobile ? "0.875rem" : "1rem",
-                color: "#4B5563",
-                lineHeight: 1.7, marginBottom: isMobile ? "1.5rem" : "2.5rem",
+                fontSize: "1rem", color: "#4B5563",
+                lineHeight: 1.7, marginBottom: "2.5rem",
               }}>
                 We provide end-to-end solutions from hardware procurement to software
                 deployment and ongoing support. Our dedicated team ensures your success
@@ -221,32 +209,25 @@ export default function ContactForm() {
 
               {/* Stats grid */}
               <div style={{
-                display: "grid",
-                gridTemplateColumns: "1fr 1fr",
-                gap: isMobile ? "0.75rem" : "1.25rem",
+                display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.25rem",
               }}>
                 {STATS.map((stat) => (
                   <div key={stat.label} style={{
-                    borderRadius: isMobile ? 12 : 16,
-                    padding: isMobile ? "1rem 0.75rem" : "1.25rem 1rem",
+                    borderRadius: 16, padding: "1.25rem 1rem",
                     textAlign: "center",
                     backgroundColor: "#FFFFFF",
                     border: "1px solid #E8EDF5",
                     boxShadow: "0 2px 12px rgba(0,0,0,0.02)",
                   }}>
                     <div style={{
-                      fontSize: isMobile ? "1.5rem" : "1.875rem",
-                      fontWeight: 800, marginBottom: "0.35rem",
+                      fontSize: "1.875rem", fontWeight: 800, marginBottom: "0.5rem",
                       background: "linear-gradient(135deg, #00D4AA, #4A6CF7)",
                       WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
                       backgroundClip: "text",
                     }}>
                       {stat.value}
                     </div>
-                    <div style={{
-                      fontSize: isMobile ? "0.6875rem" : "0.8125rem",
-                      color: "#6B7280", fontWeight: 600,
-                    }}>
+                    <div style={{ fontSize: "0.8125rem", color: "#6B7280", fontWeight: 600 }}>
                       {stat.label}
                     </div>
                   </div>
@@ -256,24 +237,18 @@ export default function ContactForm() {
 
             {/* Trust signals */}
             <div style={{
-              display: "flex",
-              flexWrap: "wrap",
-              gap: isMobile ? "1rem" : "1.5rem",
-              paddingInline: "0.5rem",
+              display: "flex", flexWrap: "wrap", gap: "1.5rem", paddingInline: "0.5rem",
             }}>
               {TRUST_SIGNALS.map(({ label, color, icon }) => (
                 <div key={label} style={{ display: "flex", alignItems: "center", gap: "0.6rem" }}>
                   <div style={{ 
                     display: "flex", alignItems: "center", justifyContent: "center",
                     width: 32, height: 32, borderRadius: "50%",
-                    background: `${color}15`,
+                    background: `${color}15`, // 15% opacity hex
                   }}>
                     <TrustIcon icon={icon} color={color} />
                   </div>
-                  <span style={{
-                    fontSize: isMobile ? "0.8125rem" : "0.875rem",
-                    color: "#4B5563", fontWeight: 600,
-                  }}>
+                  <span style={{ fontSize: "0.875rem", color: "#4B5563", fontWeight: 600 }}>
                     {label}
                   </span>
                 </div>
@@ -292,19 +267,15 @@ export default function ContactForm() {
             <div style={{
               backgroundColor: "#FFFFFF",
               border: "1px solid #E8EDF5",
-              borderRadius: isMobile ? 16 : 24,
-              padding: isMobile ? "1.5rem" : "3rem",
+              borderRadius: 24,
+              padding: "3rem",
               boxShadow: "0 8px 40px rgba(0,0,0,0.06)",
             }}>
               <form onSubmit={handleSubmit} noValidate>
-                <div style={{ display: "flex", flexDirection: "column", gap: isMobile ? "1.25rem" : "1.75rem" }}>
+                <div style={{ display: "flex", flexDirection: "column", gap: "1.75rem" }}>
 
                   {/* Row: Full Name + Company */}
-                  <div style={{
-                    display: "grid",
-                    gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr",
-                    gap: isMobile ? "1.25rem" : "1.5rem",
-                  }}>
+                  <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "1.5rem" }}>
                     <motion.div variants={slideUpVariant}>
                       <FormLabel htmlFor="fullName" required>Full Name</FormLabel>
                       <input
@@ -331,11 +302,7 @@ export default function ContactForm() {
                   </div>
 
                   {/* Row: Email + Phone */}
-                  <div style={{
-                    display: "grid",
-                    gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr",
-                    gap: isMobile ? "1.25rem" : "1.5rem",
-                  }}>
+                  <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "1.5rem" }}>
                     <motion.div variants={slideUpVariant}>
                       <FormLabel htmlFor="email" required>Email Address</FormLabel>
                       <input
@@ -423,8 +390,7 @@ export default function ContactForm() {
 
                   {/* Consent */}
                   <motion.p variants={slideUpVariant} style={{
-                    fontSize: isMobile ? "0.8125rem" : "0.875rem",
-                    color: "#6B7280", lineHeight: 1.6,
+                    fontSize: "0.875rem", color: "#6B7280", lineHeight: 1.6,
                   }}>
                     By clicking Schedule a Demo, I agree to be contacted by the Bionics
                     Solutions team for consultation and demo.
@@ -438,11 +404,11 @@ export default function ContactForm() {
                       style={{
                         position: "relative",
                         width: "100%",
-                        padding: isMobile ? "1rem" : "1.125rem",
+                        padding: "1.125rem",
                         borderRadius: 14,
                         border: "none",
                         cursor: "pointer",
-                        fontSize: isMobile ? "1rem" : "1.0625rem",
+                        fontSize: "1.0625rem",
                         fontWeight: 700,
                         color: "#FFFFFF",
                         background: "linear-gradient(135deg, #00D4AA, #4A6CF7, #8B5CF6)",

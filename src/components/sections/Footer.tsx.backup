@@ -2,14 +2,14 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 /* ── Data ─────────────────────────────────────────────────── */
 const SOCIAL_LINKS = [
   {
     name: "LinkedIn",
     href: "#",
-    color: "#0077b5",
+    color: "#0077b5", // Brand color fallback, but user requested brand color on hover. The Bionics brand is Cyan/Blue/Purple. Let's use Cyan (#00D4AA)
     hoverBg: "rgba(0,212,170,0.1)",
     hoverColor: "#00D4AA",
     icon: (
@@ -106,19 +106,6 @@ const itemVariants = {
    ════════════════════════════════════════════════════════════ */
 export default function Footer() {
   const currentYear = new Date().getFullYear();
-  const [isMobile, setIsMobile] = useState(false);
-  const [isTablet, setIsTablet] = useState(false);
-
-  useEffect(() => {
-    const check = () => {
-      const w = window.innerWidth;
-      setIsMobile(w < 640);
-      setIsTablet(w >= 640 && w < 1024);
-    };
-    check();
-    window.addEventListener("resize", check);
-    return () => window.removeEventListener("resize", check);
-  }, []);
 
   return (
     <footer
@@ -150,10 +137,7 @@ export default function Footer() {
         }}
       />
 
-      <div className="container-bionics" style={{
-        paddingTop: isMobile ? "3rem" : "5rem",
-        paddingBottom: isMobile ? "2rem" : "3rem",
-      }}>
+      <div className="container-bionics" style={{ paddingTop: "5rem", paddingBottom: "3rem" }}>
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -164,18 +148,14 @@ export default function Footer() {
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: isMobile
-                ? "1fr"
-                : isTablet
-                  ? "1fr 1fr"
-                  : "2fr 1fr 1fr 1fr",
-              gap: isMobile ? "2rem" : "3rem",
-              paddingBottom: isMobile ? "2rem" : "3.5rem",
+              gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+              gap: "3rem",
+              paddingBottom: "3.5rem",
               borderBottom: "1px solid #E8EDF5",
             }}
           >
             {/* ── Brand column ────────────────────────────── */}
-            <motion.div variants={itemVariants} style={{ minWidth: 0 }}>
+            <motion.div variants={itemVariants} style={{ gridColumn: "span 2", minWidth: 0 }}>
               {/* Logo + brand name */}
               <a
                 href="#"
@@ -193,11 +173,11 @@ export default function Footer() {
                   alt="Bionics Logo"
                   width={44}
                   height={44}
-                  style={{ height: isMobile ? 36 : 44, width: "auto", objectFit: "contain", display: "block" }}
+                  style={{ height: 44, width: "auto", objectFit: "contain", display: "block" }}
                 />
                 <span
                   style={{
-                    fontSize: isMobile ? "1.5rem" : "1.75rem",
+                    fontSize: "1.75rem", // Match navbar size
                     fontWeight: 800,
                     letterSpacing: "0.25em",
                     textTransform: "uppercase",
@@ -205,8 +185,8 @@ export default function Footer() {
                     WebkitBackgroundClip: "text",
                     WebkitTextFillColor: "transparent",
                     backgroundClip: "text",
-                    lineHeight: 1,
-                    paddingTop: "0.15rem",
+                    lineHeight: 1, // ensure no extra space below text
+                    paddingTop: "0.15rem", // Visually center with icon
                   }}
                 >
                   BIONICS
@@ -215,20 +195,20 @@ export default function Footer() {
 
               {/* Tagline */}
               <p style={{
-                fontSize: isMobile ? "0.875rem" : "1rem",
+                fontSize: "1rem",
                 color: "#4B5563",
                 lineHeight: 1.8,
                 maxWidth: "32ch",
-                marginBottom: "1.5rem",
+                marginBottom: "2rem",
               }}>
                 Empowering businesses with intelligent display solutions.
                 Transform your spaces with Bionics.
               </p>
 
               {/* Social icons */}
-              <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
                 {SOCIAL_LINKS.map((social) => (
-                  <SocialIcon key={social.name} social={social} isMobile={isMobile} />
+                  <SocialIcon key={social.name} social={social} />
                 ))}
               </div>
             </motion.div>
@@ -242,17 +222,17 @@ export default function Footer() {
                   color: "#0D0D0D",
                   textTransform: "uppercase",
                   letterSpacing: "0.15em",
-                  marginBottom: isMobile ? "1rem" : "1.5rem",
+                  marginBottom: "1.5rem",
                 }}>
                   {group.title}
                 </h4>
-                <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: isMobile ? "0.75rem" : "1rem" }}>
+                <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: "1rem" }}>
                   {group.links.map((link) => (
                     <li key={link.label}>
                       <a
                         href={link.href}
                         style={{
-                          fontSize: isMobile ? "0.9375rem" : "1rem",
+                          fontSize: "1rem",
                           color: "#4B5563",
                           textDecoration: "none",
                           transition: "color 0.2s ease, transform 0.2s ease",
@@ -282,7 +262,7 @@ export default function Footer() {
               <h4 style={{
                 fontSize: "0.875rem", fontWeight: 800,
                 color: "#0D0D0D", textTransform: "uppercase",
-                letterSpacing: "0.15em", marginBottom: isMobile ? "1rem" : "1.5rem",
+                letterSpacing: "0.15em", marginBottom: "1.5rem",
               }}>
                 Get in Touch
               </h4>
@@ -291,8 +271,7 @@ export default function Footer() {
                   <li key={label} style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
                     <div style={{
                       display: "flex", alignItems: "center", justifyContent: "center",
-                      width: 32, height: 32, borderRadius: "50%", background: `${color}15`,
-                      flexShrink: 0,
+                      width: 32, height: 32, borderRadius: "50%", background: `${color}15`
                     }}>
                       <ContactIcon icon={icon} color={color} />
                     </div>
@@ -300,10 +279,8 @@ export default function Footer() {
                       <a
                         href={href}
                         style={{
-                          fontSize: isMobile ? "0.875rem" : "1rem",
-                          color: "#4B5563",
+                          fontSize: "1rem", color: "#4B5563",
                           textDecoration: "none", transition: "color 0.2s ease",
-                          wordBreak: "break-all",
                         }}
                         onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = color; }}
                         onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#4B5563"; }}
@@ -311,12 +288,7 @@ export default function Footer() {
                         {label}
                       </a>
                     ) : (
-                      <span style={{
-                        fontSize: isMobile ? "0.875rem" : "1rem",
-                        color: "#4B5563",
-                      }}>
-                        {label}
-                      </span>
+                      <span style={{ fontSize: "1rem", color: "#4B5563" }}>{label}</span>
                     )}
                   </li>
                 ))}
@@ -326,14 +298,12 @@ export default function Footer() {
 
           {/* ── Copyright bar ─────────────────────────────── */}
           <motion.div variants={itemVariants} style={{
-            paddingTop: isMobile ? "1.5rem" : "2rem",
+            paddingTop: "2rem",
             display: "flex",
-            flexDirection: isMobile ? "column" : "row",
             flexWrap: "wrap",
-            alignItems: isMobile ? "center" : "center",
+            alignItems: "center",
             justifyContent: "space-between",
             gap: "1rem",
-            textAlign: isMobile ? "center" : "left",
           }}>
             <p style={{ fontSize: "0.875rem", color: "#9CA3AF" }}>
               © {currentYear} Bionics. All rights reserved.
@@ -368,9 +338,8 @@ export default function Footer() {
 
 /* ── Sub-components ───────────────────────────────────────── */
 
-function SocialIcon({ social, isMobile }: { social: typeof SOCIAL_LINKS[number]; isMobile: boolean }) {
+function SocialIcon({ social }: { social: typeof SOCIAL_LINKS[number] }) {
   const [isHovered, setIsHovered] = useState(false);
-  const size = isMobile ? 40 : 44;
 
   return (
     <a
@@ -382,8 +351,8 @@ function SocialIcon({ social, isMobile }: { social: typeof SOCIAL_LINKS[number];
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        width: size,
-        height: size,
+        width: 44,
+        height: 44,
         borderRadius: 12,
         backgroundColor: isHovered ? social.hoverBg : "#FFFFFF",
         border: "1px solid",
@@ -392,7 +361,6 @@ function SocialIcon({ social, isMobile }: { social: typeof SOCIAL_LINKS[number];
         textDecoration: "none",
         transition: "all 0.3s ease",
         boxShadow: isHovered ? `0 4px 12px ${social.hoverBg}` : "0 2px 8px rgba(0,0,0,0.02)",
-        flexShrink: 0,
       }}
     >
       {social.icon}

@@ -62,20 +62,20 @@
 
 /* ── Utility Replacements (no Tailwind) ──────────────────── */
 .desktop-only {
-  display: none;
+  display: none !important;
 }
 .mobile-only {
-  display: flex;
+  display: flex !important;
 }
 @media (min-width: 768px) {
   .desktop-only {
-    display: flex;
+    display: flex !important;
   }
   .desktop-only-inline {
-    display: inline-flex;
+    display: inline-flex !important;
   }
   .mobile-only {
-    display: none;
+    display: none !important;
   }
 }
 
