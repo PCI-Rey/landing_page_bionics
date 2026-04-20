@@ -77,9 +77,9 @@ export default function Navbar() {
           <Image
             src="/assets/images/Brand_Bionics.png"
             alt="Bionics Logo"
-            width={64}
-            height={64}
-            style={{ height: 64, width: "auto", objectFit: "contain", display: "block" }}
+            width={44}
+            height={44}
+            style={{ height: 44, width: "auto", objectFit: "contain", display: "block" }}
             priority
           />
           <span
@@ -112,17 +112,6 @@ export default function Navbar() {
 
         {/* ── CTA + Mobile Toggle ────────────────────────── */}
         <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
-          {/* Desktop CTA */}
-          <a
-            href="#contact"
-            id="navbar-cta"
-            className="gradient-btn desktop-only-inline"
-            style={{ fontSize: "0.875rem", padding: "0.625rem 1.5rem" }}
-          >
-            Schedule a Demo
-            <ArrowIcon />
-          </a>
-
           {/* Mobile hamburger */}
           <button
             onClick={() => setMobileMenuOpen((v) => !v)}
@@ -207,22 +196,7 @@ export default function Navbar() {
                 </a>
               ))}
 
-              {/* Mobile CTA */}
-              <a
-                href="#contact"
-                onClick={closeMobile}
-                id="navbar-cta-mobile"
-                className="gradient-btn"
-                style={{
-                  marginTop: "1rem",
-                  width: "100%",
-                  justifyContent: "center",
-                  fontSize: "0.9375rem",
-                  padding: "0.75rem 1.5rem",
-                }}
-              >
-                Schedule a Demo
-              </a>
+
             </div>
           </motion.div>
         )}

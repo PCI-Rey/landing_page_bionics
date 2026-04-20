@@ -171,9 +171,9 @@ export default function Footer() {
                 <Image
                   src="/assets/images/Brand_Bionics.png"
                   alt="Bionics Logo"
-                  width={64}
-                  height={64}
-                  style={{ height: 64, width: "auto", objectFit: "contain", display: "block" }}
+                  width={44}
+                  height={44}
+                  style={{ height: 44, width: "auto", objectFit: "contain", display: "block" }}
                 />
                 <span
                   style={{
