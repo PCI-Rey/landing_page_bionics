@@ -23,57 +23,21 @@ const itemVariants = {
 };
 
 const imageVariants = {
-  hidden: { opacity: 0, y: 32 },
-  visible: (i: number) => ({
+  hidden: { opacity: 0, y: 40 },
+  visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.7, ease: "easeOut" as const, delay: i * 0.1 },
-  }),
+    transition: { duration: 0.7, ease: "easeOut" as const },
+  },
 };
 
 /* ── Styles ───────────────────────────────────────────────── */
-const GRADIENT = "linear-gradient(135deg, #00D4AA, #4A6CF7, #8B5CF6)";
-
 const gradientTextStyle: React.CSSProperties = {
-  background: GRADIENT,
+  background: "linear-gradient(135deg, #00D4AA, #4A6CF7, #8B5CF6)",
   WebkitBackgroundClip: "text",
   WebkitTextFillColor: "transparent",
   backgroundClip: "text",
 };
-
-/* ── Screenshot data ──────────────────────────────────────── */
-const SCREENSHOTS = [
-  {
-    src: "/assets/images/hospitality_1.png",
-    alt: "Bionics Hospitality TV — Personalized Welcome Experience",
-    caption: "Personalized Welcome",
-    size: "large",
-  },
-  {
-    src: "/assets/images/hospitality_2.png",
-    alt: "Bionics Hospitality TV — Nearby Places & Local Discovery",
-    caption: "Nearby Discovery",
-    size: "medium",
-  },
-  {
-    src: "/assets/images/hospitality_3.png",
-    alt: "Bionics Hospitality TV — Integrated Entertainment Playback",
-    caption: "Entertainment Playback",
-    size: "medium",
-  },
-  {
-    src: "/assets/images/hospitality_4.png",
-    alt: "Bionics Hospitality TV — In-Room Music Experience",
-    caption: "In-Room Music",
-    size: "small",
-  },
-  {
-    src: "/assets/images/hospitality_5.png",
-    alt: "Bionics Hospitality TV — Hotel Guide & Guest Services",
-    caption: "Hotel Guide & Services",
-    size: "small",
-  },
-];
 
 /* ════════════════════════════════════════════════════════════
    HTV HERO
@@ -99,12 +63,14 @@ export default function HTVHero() {
         overflow: "hidden",
       }}
     >
-      {/* ══ Background — safe pattern (no translateY overflow) ═══ */}
+      {/* ══════════════════════════════════════════════════════════
+          BACKGROUND — identical pattern to WFHero
+          ══════════════════════════════════════════════════════════ */}
       <div
         aria-hidden="true"
         style={{ position: "absolute", inset: 0, zIndex: 0, pointerEvents: "none" }}
       >
-        {/* Scrolling grid */}
+        {/* Layer 1: Scrolling grid via backgroundPosition */}
         <motion.div
           animate={{ backgroundPosition: ["0px 0px", "0px 48px"] }}
           transition={{ repeat: Infinity, duration: 3, ease: "linear" }}
@@ -112,8 +78,8 @@ export default function HTVHero() {
             position: "absolute",
             inset: "-48px 0 0 0",
             backgroundImage: `
-              linear-gradient(to right,  rgba(0,212,170,0.07) 1px, transparent 1px),
-              linear-gradient(to bottom, rgba(0,212,170,0.07) 1px, transparent 1px)
+              linear-gradient(to right,  rgba(74,108,247,0.08) 1px, transparent 1px),
+              linear-gradient(to bottom, rgba(74,108,247,0.08) 1px, transparent 1px)
             `,
             backgroundSize: "48px 48px",
             maskImage:
@@ -123,131 +89,158 @@ export default function HTVHero() {
           }}
         />
 
-        {/* Ambient blob — Cyan, top-left */}
+        {/* Layer 2: Soft glow blobs */}
         <motion.div
-          animate={{ x: [0, 50, -30, 0], y: [0, -40, 30, 0], scale: [1, 1.07, 0.96, 1] }}
-          transition={{ repeat: Infinity, duration: 16, ease: "easeInOut" }}
+          animate={{ x: [0, 40, -30, 0], y: [0, -40, 30, 0], scale: [1, 1.06, 0.96, 1] }}
+          transition={{ repeat: Infinity, duration: 15, ease: "easeInOut" }}
           style={{
             position: "absolute",
-            top: "-18%",
             left: "-10%",
-            width: 680,
-            height: 680,
-            background: "radial-gradient(circle, rgba(0,212,170,0.14) 0%, transparent 68%)",
-            filter: "blur(70px)",
+            top: "-10%",
+            width: 600,
+            height: 600,
+            background: "radial-gradient(circle, rgba(0,212,170,0.10) 0%, transparent 70%)",
+            filter: "blur(80px)",
             borderRadius: "50%",
             willChange: "transform",
           }}
         />
-
-        {/* Ambient blob — Indigo, top-right */}
         <motion.div
-          animate={{ x: [0, -50, 30, 0], y: [0, 40, -30, 0], scale: [1, 1.06, 0.94, 1] }}
+          animate={{ x: [0, -40, 30, 0], y: [0, 40, -30, 0], scale: [1, 1.05, 0.94, 1] }}
+          transition={{ repeat: Infinity, duration: 18, ease: "easeInOut" }}
+          style={{
+            position: "absolute",
+            right: "-5%",
+            top: "-15%",
+            width: 700,
+            height: 700,
+            background: "radial-gradient(circle, rgba(74,108,247,0.09) 0%, transparent 70%)",
+            filter: "blur(90px)",
+            borderRadius: "50%",
+            willChange: "transform",
+          }}
+        />
+        <motion.div
+          animate={{ x: [0, 30, -20, 0], y: [0, -30, 40, 0], scale: [1, 1.07, 0.95, 1] }}
           transition={{ repeat: Infinity, duration: 20, ease: "easeInOut" }}
           style={{
             position: "absolute",
-            top: "-15%",
-            right: "-12%",
-            width: 720,
-            height: 720,
-            background: "radial-gradient(circle, rgba(74,108,247,0.11) 0%, transparent 68%)",
+            left: "30%",
+            bottom: "-10%",
+            width: 600,
+            height: 600,
+            background: "radial-gradient(circle, rgba(139,92,246,0.08) 0%, transparent 70%)",
             filter: "blur(80px)",
             borderRadius: "50%",
             willChange: "transform",
           }}
         />
 
-        {/* Ambient blob — Violet, bottom-center */}
+        {/* Layer 3: Glowing grid intersection dots */}
         <motion.div
-          animate={{ x: [0, 40, -35, 0], y: [0, -40, 35, 0], scale: [1, 1.08, 0.93, 1] }}
-          transition={{ repeat: Infinity, duration: 24, ease: "easeInOut" }}
-          style={{
-            position: "absolute",
-            bottom: "-20%",
-            left: "28%",
-            width: 620,
-            height: 620,
-            background: "radial-gradient(circle, rgba(139,92,246,0.10) 0%, transparent 68%)",
-            filter: "blur(70px)",
-            borderRadius: "50%",
-            willChange: "transform",
-          }}
-        />
-
-        {/* Diagonal light sweep */}
-        <motion.div
-          animate={{ x: ["-120%", "200%"] }}
-          transition={{ repeat: Infinity, duration: 14, ease: "linear", repeatDelay: 8 }}
-          style={{
-            position: "absolute",
-            top: "-30%",
-            left: 0,
-            width: "38%",
-            height: "160%",
-            background:
-              "linear-gradient(90deg, transparent 0%, rgba(0,212,170,0.04) 40%, rgba(74,108,247,0.03) 60%, transparent 100%)",
-            filter: "blur(20px)",
-            transform: "rotate(-10deg)",
-            willChange: "transform",
-          }}
-        />
-
-        {/* Pulsing intersection dots */}
-        <motion.div
-          animate={{ opacity: [0.3, 0.85, 0.3], scale: [1, 1.5, 1] }}
+          animate={{ opacity: [0.3, 0.9, 0.3], scale: [1, 1.5, 1] }}
           transition={{ repeat: Infinity, duration: 3.5, ease: "easeInOut" }}
-          style={{ position: "absolute", top: "22%", left: "14%", width: 6, height: 6, borderRadius: "50%", background: "#00D4AA", boxShadow: "0 0 10px rgba(0,212,170,0.65)" }}
+          style={{
+            position: "absolute",
+            top: "22%",
+            left: "16%",
+            width: 6,
+            height: 6,
+            borderRadius: "50%",
+            background: "#00D4AA",
+            boxShadow: "0 0 10px rgba(0,212,170,0.6)",
+          }}
         />
         <motion.div
           animate={{ opacity: [0.2, 0.8, 0.2], scale: [1, 1.4, 1] }}
-          transition={{ repeat: Infinity, duration: 4.5, ease: "easeInOut", delay: 1 }}
-          style={{ position: "absolute", top: "16%", right: "18%", width: 6, height: 6, borderRadius: "50%", background: "#4A6CF7", boxShadow: "0 0 10px rgba(74,108,247,0.65)" }}
+          transition={{ repeat: Infinity, duration: 4.5, ease: "easeInOut", delay: 0.8 }}
+          style={{
+            position: "absolute",
+            top: "18%",
+            right: "20%",
+            width: 6,
+            height: 6,
+            borderRadius: "50%",
+            background: "#4A6CF7",
+            boxShadow: "0 0 10px rgba(74,108,247,0.6)",
+          }}
         />
         <motion.div
           animate={{ opacity: [0.25, 0.85, 0.25], scale: [1, 1.6, 1] }}
-          transition={{ repeat: Infinity, duration: 5, ease: "easeInOut", delay: 2 }}
-          style={{ position: "absolute", top: "55%", left: "22%", width: 5, height: 5, borderRadius: "50%", background: "#8B5CF6", boxShadow: "0 0 8px rgba(139,92,246,0.60)" }}
+          transition={{ repeat: Infinity, duration: 5, ease: "easeInOut", delay: 1.6 }}
+          style={{
+            position: "absolute",
+            top: "52%",
+            left: "25%",
+            width: 7,
+            height: 7,
+            borderRadius: "50%",
+            background: "#8B5CF6",
+            boxShadow: "0 0 12px rgba(139,92,246,0.55)",
+          }}
+        />
+        <motion.div
+          animate={{ opacity: [0.3, 0.9, 0.3], scale: [1, 1.4, 1] }}
+          transition={{ repeat: Infinity, duration: 4, ease: "easeInOut", delay: 2.2 }}
+          style={{
+            position: "absolute",
+            top: "58%",
+            right: "28%",
+            width: 5,
+            height: 5,
+            borderRadius: "50%",
+            background: "#00D4AA",
+            boxShadow: "0 0 8px rgba(0,212,170,0.55)",
+          }}
         />
 
-        {/* Corner frame markers */}
+        {/* Layer 4: Corner frame markers */}
         <div style={{ position: "absolute", top: 40, left: 40 }}>
-          <div style={{ width: 24, height: 1.5, background: "rgba(0,212,170,0.25)" }} />
-          <div style={{ width: 1.5, height: 24, background: "rgba(0,212,170,0.25)", marginTop: -1.5 }} />
+          <div style={{ width: 24, height: 1.5, background: "rgba(74,108,247,0.22)" }} />
+          <div style={{ width: 1.5, height: 24, background: "rgba(74,108,247,0.22)", marginTop: -1.5 }} />
         </div>
         <div style={{ position: "absolute", top: 40, right: 40, display: "flex", flexDirection: "column", alignItems: "flex-end" }}>
-          <div style={{ width: 24, height: 1.5, background: "rgba(0,212,170,0.25)" }} />
-          <div style={{ width: 1.5, height: 24, background: "rgba(0,212,170,0.25)", marginTop: -1.5 }} />
+          <div style={{ width: 24, height: 1.5, background: "rgba(74,108,247,0.22)" }} />
+          <div style={{ width: 1.5, height: 24, background: "rgba(74,108,247,0.22)", marginTop: -1.5 }} />
         </div>
         <div style={{ position: "absolute", bottom: 40, left: 40, display: "flex", flexDirection: "column-reverse" }}>
-          <div style={{ width: 24, height: 1.5, background: "rgba(0,212,170,0.25)" }} />
-          <div style={{ width: 1.5, height: 24, background: "rgba(0,212,170,0.25)", marginBottom: -1.5 }} />
+          <div style={{ width: 24, height: 1.5, background: "rgba(74,108,247,0.22)" }} />
+          <div style={{ width: 1.5, height: 24, background: "rgba(74,108,247,0.22)", marginBottom: -1.5 }} />
         </div>
         <div style={{ position: "absolute", bottom: 40, right: 40, display: "flex", flexDirection: "column-reverse", alignItems: "flex-end" }}>
-          <div style={{ width: 24, height: 1.5, background: "rgba(0,212,170,0.25)" }} />
-          <div style={{ width: 1.5, height: 24, background: "rgba(0,212,170,0.25)", marginBottom: -1.5 }} />
+          <div style={{ width: 24, height: 1.5, background: "rgba(74,108,247,0.22)" }} />
+          <div style={{ width: 1.5, height: 24, background: "rgba(74,108,247,0.22)", marginBottom: -1.5 }} />
         </div>
 
-        {/* Center vignette — keeps headline dominant */}
+        {/* Layer 5: Center vignette */}
         <div
           style={{
             position: "absolute",
             inset: 0,
             background:
-              "radial-gradient(ellipse 64% 55% at 50% 38%, rgba(255,255,255,0.78) 0%, transparent 100%)",
+              "radial-gradient(ellipse 62% 55% at 50% 40%, rgba(255,255,255,0.75) 0%, transparent 100%)",
           }}
         />
       </div>
 
-      {/* ══ Content ══════════════════════════════════════════ */}
-      <div className="container-bionics" style={{ position: "relative", zIndex: 1 }}>
-
-        {/* ── Text Block ───────────────────────────────────── */}
+      {/* ══════════════════════════════════════════════════════════
+          CONTENT
+          ══════════════════════════════════════════════════════════ */}
+      <div
+        className="container-bionics"
+        style={{ position: "relative", zIndex: 1 }}
+      >
+        {/* ── Text content ─────────────────────────────────── */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
-          style={{ textAlign: "center", maxWidth: 860, margin: "0 auto" }}
+          style={{
+            textAlign: "center",
+            maxWidth: 860,
+            margin: "0 auto",
+          }}
         >
           {/* Eyebrow badge */}
           <motion.div variants={itemVariants} style={{ marginBottom: "1.5rem" }}>
@@ -258,7 +251,7 @@ export default function HTVHero() {
                 gap: "0.4rem",
                 padding: "0.35rem 1rem",
                 background: "rgba(0,212,170,0.07)",
-                border: "1px solid rgba(0,212,170,0.20)",
+                border: "1px solid rgba(0,212,170,0.18)",
                 borderRadius: 9999,
                 fontSize: "0.8125rem",
                 fontWeight: 600,
@@ -267,7 +260,6 @@ export default function HTVHero() {
               }}
             >
               <span
-                aria-hidden="true"
                 style={{
                   width: 6,
                   height: 6,
@@ -275,6 +267,7 @@ export default function HTVHero() {
                   backgroundColor: "#00D4AA",
                   display: "inline-block",
                 }}
+                aria-hidden="true"
               />
               Bionics Hospitality TV
             </span>
@@ -305,7 +298,8 @@ export default function HTVHero() {
               fontSize: isMobile ? "1rem" : "1.125rem",
               color: "#4B5563",
               lineHeight: 1.8,
-              maxWidth: 620,
+              marginBottom: "2.5rem",
+              maxWidth: 600,
               margin: "0 auto 2.5rem",
             }}
           >
@@ -321,6 +315,7 @@ export default function HTVHero() {
             className="hero-btn-group"
             style={{ marginBottom: "2rem" }}
           >
+            {/* Primary */}
             <a
               href="#htv-contact"
               id="htv-hero-cta-primary"
@@ -330,6 +325,8 @@ export default function HTVHero() {
               Schedule a Demo
               <ArrowIcon />
             </a>
+
+            {/* Secondary */}
             <a
               href="#htv-features"
               id="htv-hero-cta-secondary"
@@ -376,7 +373,7 @@ export default function HTVHero() {
           </motion.p>
         </motion.div>
 
-        {/* ── Screenshot Composition ───────────────────────── */}
+        {/* ── Image Composition — 3 panel, middle elevated ─── */}
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -385,210 +382,116 @@ export default function HTVHero() {
             hidden: { opacity: 0 },
             visible: {
               opacity: 1,
-              transition: { delayChildren: 0.15, staggerChildren: 0.1 },
+              transition: { delayChildren: 0.2, staggerChildren: 0.14 },
             },
           }}
+          style={{
+            display: "flex",
+            flexDirection: isMobile ? "column" : "row",
+            gap: isMobile ? "1rem" : "1.5rem",
+            alignItems: isMobile ? "stretch" : "flex-end",
+            maxWidth: 1100,
+            margin: "0 auto",
+          }}
         >
-          {/* Desktop: asymmetric bento-style */}
-          {!isMobile ? (
-            <div
+          {/* Image 1 — Left */}
+          <motion.div
+            variants={imageVariants}
+            whileHover={{ scale: 1.02 }}
+            transition={{ duration: 0.3 }}
+            style={{
+              flex: isMobile ? "1 1 auto" : "1 1 33%",
+              borderRadius: 20,
+              overflow: "hidden",
+              boxShadow: "0 8px 40px rgba(0,0,0,0.09)",
+              willChange: "transform",
+            }}
+          >
+            <Image
+              src="/assets/images/hospitality_1.png"
+              alt="Bionics Hospitality TV — Personalized Welcome Experience"
+              width={640}
+              height={480}
+              sizes="(max-width: 768px) 100vw, 33vw"
               style={{
-                display: "grid",
-                gridTemplateColumns: "1fr 1fr 1fr",
-                gridTemplateRows: "auto auto",
-                gap: "1.25rem",
-                maxWidth: 1100,
-                margin: "0 auto",
+                width: "100%",
+                height: "auto",
+                aspectRatio: "4/3",
+                objectFit: "cover",
+                display: "block",
               }}
-            >
-              {/* Featured — spans 1 col, 2 rows (tall) */}
-              <motion.div
-                custom={0}
-                variants={imageVariants}
-                whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.3 }}
-                style={{
-                  gridColumn: "1 / 2",
-                  gridRow: "1 / 3",
-                  position: "relative",
-                  borderRadius: 20,
-                  overflow: "hidden",
-                  border: "1px solid #E8EDF5",
-                  boxShadow:
-                    "0 20px 60px rgba(0,212,170,0.14), 0 4px 20px rgba(0,0,0,0.07)",
-                  background: "#0D0D14",
-                  willChange: "transform",
-                }}
-              >
-                <Image
-                  src={SCREENSHOTS[0].src}
-                  alt={SCREENSHOTS[0].alt}
-                  width={720}
-                  height={960}
-                  sizes="33vw"
-                  style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
-                  priority
-                />
-                <div style={captionOverlay}>
-                  <p style={captionText}>{SCREENSHOTS[0].caption}</p>
-                </div>
-              </motion.div>
+              priority
+            />
+          </motion.div>
 
-              {/* Top-center */}
-              <motion.div
-                custom={1}
-                variants={imageVariants}
-                whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.3 }}
-                style={{ ...mediumCard, gridColumn: "2 / 3", gridRow: "1" }}
-              >
-                <Image
-                  src={SCREENSHOTS[1].src}
-                  alt={SCREENSHOTS[1].alt}
-                  width={640}
-                  height={360}
-                  sizes="33vw"
-                  style={{ width: "100%", height: "auto", aspectRatio: "16/9", objectFit: "cover", display: "block" }}
-                  priority
-                />
-                <div style={captionOverlay}>
-                  <p style={captionText}>{SCREENSHOTS[1].caption}</p>
-                </div>
-              </motion.div>
+          {/* Image 2 — Middle (elevated) */}
+          <motion.div
+            variants={imageVariants}
+            whileHover={{ scale: 1.02 }}
+            transition={{ duration: 0.3 }}
+            style={{
+              flex: isMobile ? "1 1 auto" : "1 1 33%",
+              borderRadius: 20,
+              overflow: "hidden",
+              boxShadow:
+                "0 20px 60px rgba(0,212,170,0.18), 0 4px 24px rgba(0,0,0,0.07)",
+              transform: isMobile ? "none" : "translateY(-24px)",
+              willChange: "transform",
+            }}
+          >
+            <Image
+              src="/assets/images/hospitality_3.png"
+              alt="Bionics Hospitality TV — Integrated Entertainment Playback"
+              width={640}
+              height={480}
+              sizes="(max-width: 768px) 100vw, 33vw"
+              style={{
+                width: "100%",
+                height: "auto",
+                aspectRatio: "4/3",
+                objectFit: "cover",
+                display: "block",
+              }}
+              priority
+            />
+          </motion.div>
 
-              {/* Top-right */}
-              <motion.div
-                custom={2}
-                variants={imageVariants}
-                whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.3 }}
-                style={{ ...mediumCard, gridColumn: "3 / 4", gridRow: "1" }}
-              >
-                <Image
-                  src={SCREENSHOTS[2].src}
-                  alt={SCREENSHOTS[2].alt}
-                  width={640}
-                  height={360}
-                  sizes="33vw"
-                  style={{ width: "100%", height: "auto", aspectRatio: "16/9", objectFit: "cover", display: "block" }}
-                  priority
-                />
-                <div style={captionOverlay}>
-                  <p style={captionText}>{SCREENSHOTS[2].caption}</p>
-                </div>
-              </motion.div>
-
-              {/* Bottom-center */}
-              <motion.div
-                custom={3}
-                variants={imageVariants}
-                whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.3 }}
-                style={{ ...mediumCard, gridColumn: "2 / 3", gridRow: "2" }}
-              >
-                <Image
-                  src={SCREENSHOTS[3].src}
-                  alt={SCREENSHOTS[3].alt}
-                  width={640}
-                  height={360}
-                  sizes="33vw"
-                  style={{ width: "100%", height: "auto", aspectRatio: "16/9", objectFit: "cover", display: "block" }}
-                />
-                <div style={captionOverlay}>
-                  <p style={captionText}>{SCREENSHOTS[3].caption}</p>
-                </div>
-              </motion.div>
-
-              {/* Bottom-right */}
-              <motion.div
-                custom={4}
-                variants={imageVariants}
-                whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.3 }}
-                style={{ ...mediumCard, gridColumn: "3 / 4", gridRow: "2" }}
-              >
-                <Image
-                  src={SCREENSHOTS[4].src}
-                  alt={SCREENSHOTS[4].alt}
-                  width={640}
-                  height={360}
-                  sizes="33vw"
-                  style={{ width: "100%", height: "auto", aspectRatio: "16/9", objectFit: "cover", display: "block" }}
-                />
-                <div style={captionOverlay}>
-                  <p style={captionText}>{SCREENSHOTS[4].caption}</p>
-                </div>
-              </motion.div>
-            </div>
-          ) : (
-            /* Mobile: clean vertical stack */
-            <div style={{ display: "flex", flexDirection: "column", gap: "1rem", maxWidth: 520, margin: "0 auto" }}>
-              {SCREENSHOTS.map((s, i) => (
-                <motion.div
-                  key={s.src}
-                  custom={i}
-                  variants={imageVariants}
-                  style={{
-                    position: "relative",
-                    borderRadius: 16,
-                    overflow: "hidden",
-                    border: "1px solid #E8EDF5",
-                    boxShadow: "0 4px 20px rgba(0,0,0,0.08)",
-                    background: "#0D0D14",
-                  }}
-                >
-                  <Image
-                    src={s.src}
-                    alt={s.alt}
-                    width={640}
-                    height={360}
-                    sizes="100vw"
-                    style={{ width: "100%", height: "auto", aspectRatio: "16/9", objectFit: "cover", display: "block" }}
-                    priority={i === 0}
-                  />
-                  <div style={captionOverlay}>
-                    <p style={captionText}>{s.caption}</p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          )}
+          {/* Image 3 — Right */}
+          <motion.div
+            variants={imageVariants}
+            whileHover={{ scale: 1.02 }}
+            transition={{ duration: 0.3 }}
+            style={{
+              flex: isMobile ? "1 1 auto" : "1 1 33%",
+              borderRadius: 20,
+              overflow: "hidden",
+              boxShadow: "0 8px 40px rgba(0,0,0,0.09)",
+              willChange: "transform",
+            }}
+          >
+            <Image
+              src="/assets/images/hospitality_5.png"
+              alt="Bionics Hospitality TV — Hotel Guide & Guest Services"
+              width={640}
+              height={480}
+              sizes="(max-width: 768px) 100vw, 33vw"
+              style={{
+                width: "100%",
+                height: "auto",
+                aspectRatio: "4/3",
+                objectFit: "cover",
+                display: "block",
+              }}
+              priority
+            />
+          </motion.div>
         </motion.div>
       </div>
     </section>
   );
 }
 
-/* ── Shared card styles ───────────────────────────────────── */
-const mediumCard: React.CSSProperties = {
-  position: "relative",
-  borderRadius: 20,
-  overflow: "hidden",
-  border: "1px solid #E8EDF5",
-  boxShadow: "0 4px 24px rgba(0,0,0,0.07)",
-  background: "#0D0D14",
-  willChange: "transform",
-};
-
-const captionOverlay: React.CSSProperties = {
-  position: "absolute",
-  bottom: 0,
-  left: 0,
-  right: 0,
-  padding: "1.25rem 1rem 0.875rem",
-  background:
-    "linear-gradient(0deg, rgba(0,0,0,0.68) 0%, rgba(0,0,0,0.18) 65%, transparent 100%)",
-};
-
-const captionText: React.CSSProperties = {
-  fontSize: "0.8125rem",
-  fontWeight: 600,
-  color: "rgba(255,255,255,0.92)",
-  margin: 0,
-  letterSpacing: "0.01em",
-};
-
-/* ── Icon ─────────────────────────────────────────────────── */
+/* ── Icons ────────────────────────────────────────────────── */
 function ArrowIcon() {
   return (
     <svg

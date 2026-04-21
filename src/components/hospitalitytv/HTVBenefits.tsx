@@ -168,7 +168,7 @@ export default function HTVBenefits() {
           viewport={{ once: true, margin: "-80px" }}
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fill, minmax(460px, 1fr))",
+            gridTemplateColumns: "repeat(auto-fill, minmax(min(100%, 460px), 1fr))",
             gap: "1.5rem",
           }}
         >
@@ -183,7 +183,7 @@ export default function HTVBenefits() {
                 background: "#FFFFFF",
                 border: "1px solid #E8EDF5",
                 borderRadius: 24,
-                padding: "2.25rem",
+                padding: "clamp(1.25rem, 4vw, 2.25rem)",
                 boxShadow: "0 4px 24px rgba(0,0,0,0.06)",
                 overflow: "hidden",
                 willChange: "transform",
@@ -270,6 +270,7 @@ export default function HTVBenefits() {
               <div
                 style={{
                   display: "inline-flex",
+                  flexWrap: "wrap",
                   alignItems: "center",
                   gap: "0.5rem",
                   padding: "0.5rem 1rem",
@@ -278,6 +279,7 @@ export default function HTVBenefits() {
                   borderRadius: 9999,
                   position: "relative",
                   zIndex: 1,
+                  maxWidth: "100%",
                 }}
               >
                 <span
