@@ -2,48 +2,48 @@
 
 import { motion } from "framer-motion";
 
-/* ── Steps ────────────────────────────────────────────────── */
+/* ── Workflow Steps ────────────────────────────────────────── */
 const STEPS = [
   {
-    id: "map",
+    id: "consultation",
     number: 1,
-    title: "Map Your Space",
+    title: "Consultation & Survey",
     description:
-      "Upload your floor plans and define zones, pathways, and points of interest with our intuitive mapping tools.",
-    gradientFrom: "#00D4AA",
-    gradientTo: "#4A6CF7",
-    icon: <MapIcon />,
+      "We assess your property's existing infrastructure, guest demographics, and specific service needs to tailor the perfect TV solution.",
+    icon: <ConsultationIcon />,
   },
   {
-    id: "configure",
+    id: "customization",
     number: 2,
-    title: "Configure Destinations",
+    title: "Customization",
     description:
-      "Set up stores, offices, departments, and amenities with rich details - descriptions, images, and operating hours.",
-    gradientFrom: "#4A6CF7",
-    gradientTo: "#8B5CF6",
-    icon: <ConfigIcon />,
+      "Our team designs your personalized welcome screens, integrates your hotel services, and aligns the UI with your brand identity.",
+    icon: <PlanningIcon />,
   },
   {
-    id: "customize",
+    id: "installation",
     number: 3,
-    title: "Customize the Experience",
+    title: "Installation & Setup",
     description:
-      "Apply your brand identity, select languages, and fine-tune the visual interface to match your property's premium aesthetic.",
-    gradientFrom: "#8B5CF6",
-    gradientTo: "#00D4AA",
-    icon: <CustomizeIcon />,
+      "Seamless professional deployment across all guest rooms, ensuring network stability and flawless hardware integration.",
+    icon: <InstallationIcon />,
   },
   {
-    id: "launch",
+    id: "support",
     number: 4,
-    title: "Launch and Manage",
+    title: "Ongoing Support",
     description:
-      "Deploy across all kiosks instantly and manage everything remotely from your centralized Bionics dashboard.",
-    gradientFrom: "#00D4AA",
-    gradientTo: "#4A6CF7",
-    icon: <LaunchIcon />,
+      "24/7 technical assistance, system updates, and content management support to guarantee a premium guest experience year-round.",
+    icon: <AftersalesIcon />,
   },
+] as const;
+
+/* ── Gradient colours per step ───────────────────────────── */
+const STEP_COLORS = [
+  { from: "#00D4AA", to: "#4A6CF7" },
+  { from: "#4A6CF7", to: "#8B5CF6" },
+  { from: "#8B5CF6", to: "#00D4AA" },
+  { from: "#00D4AA", to: "#4A6CF7" },
 ] as const;
 
 /* ── Animation Variants ───────────────────────────────────── */
@@ -60,7 +60,10 @@ const stepsContainerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: { delayChildren: 0.15, staggerChildren: 0.14 },
+    transition: {
+      delayChildren: 0.15,
+      staggerChildren: 0.14,
+    },
   },
 };
 
@@ -74,13 +77,13 @@ const stepVariants = {
 };
 
 /* ════════════════════════════════════════════════════════════
-   WF WORKFLOW
+   HTV WORKFLOW
    ════════════════════════════════════════════════════════════ */
-export default function WFWorkflow() {
+export default function HTVWorkflow() {
   return (
     <section
-      id="wf-workflow"
-      aria-labelledby="wf-workflow-heading"
+      id="htv-workflow"
+      aria-labelledby="htv-workflow-heading"
       style={{
         backgroundColor: "#FFFFFF",
         paddingTop: "6rem",
@@ -116,45 +119,44 @@ export default function WFWorkflow() {
           </span>
 
           <h2
-            id="wf-workflow-heading"
+            id="htv-workflow-heading"
             style={{
-              fontSize: "clamp(1.75rem, 4vw, 2.75rem)",
+              fontSize: "clamp(1.875rem, 4vw, 2.75rem)",
               fontWeight: 800,
               color: "#0D0D0D",
               lineHeight: 1.15,
               letterSpacing: "-0.02em",
-              marginBottom: "1.25rem",
+              marginBottom: "1rem",
             }}
           >
-            From Space Mapping to{" "}
+            Your Path to{" "}
             <span
               style={{
-                background: "linear-gradient(135deg, #00D4AA, #4A6CF7, #8B5CF6)",
+                background:
+                  "linear-gradient(135deg, #00D4AA, #4A6CF7, #8B5CF6)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
               }}
             >
-              Seamless Guidance
+              Smarter Guest Rooms
             </span>
           </h2>
-
           <p
             style={{
               fontSize: "1.0625rem",
               color: "#4B5563",
               lineHeight: 1.75,
-              maxWidth: 480,
+              maxWidth: 540,
               marginInline: "auto",
             }}
           >
-            A refined four-step process that takes your property from concept to
-            a fully live wayfinding network.
+            From initial concept to full property deployment - we ensure a smooth, disruption-free transition.
           </p>
         </motion.div>
 
-        {/* ── Desktop Horizontal Timeline ───────────────────── */}
-        <div className="wf-workflow-desktop">
+        {/* ── Steps - Desktop horizontal ───────────────────── */}
+        <div className="htv-workflow-desktop">
           <motion.div
             variants={stepsContainerVariants}
             initial="hidden"
@@ -162,20 +164,21 @@ export default function WFWorkflow() {
             viewport={{ once: true, margin: "-80px" }}
             style={{ position: "relative" }}
           >
-            {/* Dashed connector line */}
+            {/* ── Connecting dashed line ──────────────────── */}
             <div
               aria-hidden="true"
               style={{
                 position: "absolute",
-                top: 36,
-                left: "calc(12.5% + 36px)",
-                right: "calc(12.5% + 36px)",
+                top: 36, // half of 72px circle
+                left: "calc(12.5% + 36px)", // start after first circle
+                right: "calc(12.5% + 36px)", // end before last circle
                 height: 1,
                 borderTop: "2px dashed #E8EDF5",
                 zIndex: 0,
               }}
             />
 
+            {/* ── Steps row ───────────────────────────────── */}
             <div
               style={{
                 display: "flex",
@@ -198,22 +201,23 @@ export default function WFWorkflow() {
                     zIndex: 1,
                   }}
                 >
-                  {/* Gradient circle */}
+                  {/* Circle */}
                   <div
                     style={{
                       width: 72,
                       height: 72,
                       borderRadius: "50%",
-                      background: `linear-gradient(135deg, ${step.gradientFrom}, ${step.gradientTo})`,
+                      background: `linear-gradient(135deg, ${STEP_COLORS[index].from}, ${STEP_COLORS[index].to})`,
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
-                      marginBottom: "1.5rem",
+                      marginBottom: "1.25rem",
                       flexShrink: 0,
-                      boxShadow: `0 6px 24px ${step.gradientFrom}30`,
+                      boxShadow: `0 6px 24px ${STEP_COLORS[index].from}30`,
                       position: "relative",
                     }}
                   >
+                    {/* Step number overlay */}
                     <span
                       style={{
                         fontSize: "1.125rem",
@@ -224,7 +228,7 @@ export default function WFWorkflow() {
                     >
                       {step.number}
                     </span>
-                    {/* Icon badge */}
+                    {/* Icon faint overlay */}
                     <div
                       aria-hidden="true"
                       style={{
@@ -239,25 +243,27 @@ export default function WFWorkflow() {
                         alignItems: "center",
                         justifyContent: "center",
                         boxShadow: "0 2px 8px rgba(0,0,0,0.10)",
-                        color: step.gradientFrom,
+                        color: STEP_COLORS[index].from,
                       }}
                     >
                       {step.icon}
                     </div>
                   </div>
 
+                  {/* Title */}
                   <h3
                     style={{
                       fontSize: "1rem",
                       fontWeight: 700,
                       color: "#0D0D0D",
-                      marginBottom: "0.625rem",
+                      marginBottom: "0.5rem",
                       lineHeight: 1.3,
                     }}
                   >
                     {step.title}
                   </h3>
 
+                  {/* Description */}
                   <p
                     style={{
                       fontSize: "0.875rem",
@@ -275,8 +281,8 @@ export default function WFWorkflow() {
           </motion.div>
         </div>
 
-        {/* ── Mobile Vertical Timeline ──────────────────────── */}
-        <div className="wf-workflow-mobile">
+        {/* ── Steps - Mobile vertical ──────────────────────── */}
+        <div className="htv-workflow-mobile">
           <motion.div
             variants={stepsContainerVariants}
             initial="hidden"
@@ -286,7 +292,7 @@ export default function WFWorkflow() {
               position: "relative",
               display: "flex",
               flexDirection: "column",
-              gap: 0,
+              gap: "0",
             }}
           >
             {STEPS.map((step, index) => (
@@ -301,7 +307,7 @@ export default function WFWorkflow() {
                   paddingBottom: index < STEPS.length - 1 ? "2.5rem" : 0,
                 }}
               >
-                {/* Left column */}
+                {/* Left column - circle + vertical line */}
                 <div
                   style={{
                     display: "flex",
@@ -310,17 +316,19 @@ export default function WFWorkflow() {
                     flexShrink: 0,
                   }}
                 >
+                  {/* Circle */}
                   <div
                     style={{
                       width: 56,
                       height: 56,
                       borderRadius: "50%",
-                      background: `linear-gradient(135deg, ${step.gradientFrom}, ${step.gradientTo})`,
+                      background: `linear-gradient(135deg, ${STEP_COLORS[index].from}, ${STEP_COLORS[index].to})`,
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
                       flexShrink: 0,
-                      boxShadow: `0 4px 16px ${step.gradientFrom}30`,
+                      boxShadow: `0 4px 16px ${STEP_COLORS[index].from}30`,
+                      position: "relative",
                     }}
                   >
                     <span
@@ -335,7 +343,7 @@ export default function WFWorkflow() {
                     </span>
                   </div>
 
-                  {/* Vertical connector */}
+                  {/* Vertical dashed connector */}
                   {index < STEPS.length - 1 && (
                     <div
                       aria-hidden="true"
@@ -349,21 +357,8 @@ export default function WFWorkflow() {
                   )}
                 </div>
 
-                {/* Right column */}
+                {/* Right column - text */}
                 <div style={{ paddingTop: "0.625rem", paddingBottom: "0.5rem" }}>
-                  <span
-                    style={{
-                      fontSize: "0.75rem",
-                      fontWeight: 700,
-                      letterSpacing: "0.08em",
-                      textTransform: "uppercase",
-                      color: step.gradientFrom,
-                      display: "block",
-                      marginBottom: "0.25rem",
-                    }}
-                  >
-                    Step {step.number}
-                  </span>
                   <h3
                     style={{
                       fontSize: "1rem",
@@ -392,20 +387,21 @@ export default function WFWorkflow() {
         </div>
       </div>
 
+      {/* ── Responsive visibility ─────────────────────────── */}
       <style>{`
-        .wf-workflow-desktop { display: block; }
-        .wf-workflow-mobile  { display: none; }
+        .htv-workflow-desktop { display: block; }
+        .htv-workflow-mobile  { display: none;  }
 
         @media (max-width: 767px) {
-          .wf-workflow-desktop { display: none; }
-          .wf-workflow-mobile  { display: block; }
+          .htv-workflow-desktop { display: none;  }
+          .htv-workflow-mobile  { display: block; }
         }
       `}</style>
     </section>
   );
 }
 
-/* ── Step Icons (small) ───────────────────────────────────── */
+/* ── Step Icons (small, 14px) ─────────────────────────────── */
 const smallIconProps = {
   width: 14,
   height: 14,
@@ -418,34 +414,35 @@ const smallIconProps = {
   "aria-hidden": true,
 };
 
-function MapIcon() {
+function ConsultationIcon() {
   return (
     <svg {...smallIconProps}>
-      <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6" />
-      <line x1="8" y1="2" x2="8" y2="18" />
-      <line x1="16" y1="6" x2="16" y2="22" />
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
     </svg>
   );
 }
-function ConfigIcon() {
+
+function PlanningIcon() {
   return (
     <svg {...smallIconProps}>
-      <circle cx="12" cy="12" r="3" />
-      <path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14" />
+      <rect x="3" y="4" width="18" height="18" rx="2" />
+      <path d="M16 2v4M8 2v4M3 10h18" />
     </svg>
   );
 }
-function CustomizeIcon() {
+
+function InstallationIcon() {
   return (
     <svg {...smallIconProps}>
-      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+      <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
     </svg>
   );
 }
-function LaunchIcon() {
+
+function AftersalesIcon() {
   return (
     <svg {...smallIconProps}>
-      <polygon points="5 3 19 12 5 21 5 3" fill="currentColor" stroke="none" />
+      <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
     </svg>
   );
 }

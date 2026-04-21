@@ -2,49 +2,43 @@
 
 import { motion } from "framer-motion";
 
-/* ── Feature data ─────────────────────────────────────────── */
-const FEATURES = [
+/* ── Benefits Data ────────────────────────────────────────── */
+const BENEFITS = [
   {
-    id: "welcome",
-    icon: <WelcomeIcon />,
-    title: "Personalized Welcome Screen",
+    id: "centralized-control",
+    title: "Centralized Content Management",
     description:
-      "Greet every guest with custom messages, their name, and branded experiences that make the first impression unforgettable.",
+      "Control hundreds of screens across multiple locations from a single intuitive dashboard. Update content globally or locally with just a few clicks.",
+    icon: <CentralizedIcon />,
+    accentFrom: "#00D4AA",
+    accentTo: "#4A6CF7",
   },
   {
-    id: "entertainment",
-    icon: <EntertainmentIcon />,
-    title: "Entertainment & Streaming",
+    id: "real-time-updates",
+    title: "Real-Time Updates",
     description:
-      "Give guests easy access to movies, live channels, on-demand media, and streaming content - all from a beautiful on-screen interface.",
+      "Push new promotions, announcements, or emergency alerts instantly. Say goodbye to manual USB updates and outdated printed materials.",
+    icon: <RealTimeIcon />,
+    accentFrom: "#4A6CF7",
+    accentTo: "#8B5CF6",
   },
   {
-    id: "music",
-    icon: <MusicIcon />,
-    title: "Music Experience",
+    id: "hardware-agnostic",
+    title: "Hardware Agnostic & Scalable",
     description:
-      "Let guests enjoy curated music and relaxing ambient audio directly from the room interface - setting the perfect mood for their stay.",
+      "Bionics Digital Signage works seamlessly with any screen type - from commercial displays and TVs to LED video walls, scaling easily as you grow.",
+    icon: <HardwareIcon />,
+    accentFrom: "#8B5CF6",
+    accentTo: "#00D4AA",
   },
   {
-    id: "guide",
-    icon: <GuideIcon />,
-    title: "Hotel Guide & Services",
+    id: "dynamic-content",
+    title: "Dynamic Content Scheduling",
     description:
-      "Showcase hotel facilities, transport options, dining menus, and in-house services - all clearly organized and instantly accessible.",
-  },
-  {
-    id: "nearby",
-    icon: <NearbyIcon />,
-    title: "Nearby Discovery",
-    description:
-      "Help guests explore top attractions, landmarks, restaurants, and experiences around the hotel with curated local recommendations.",
-  },
-  {
-    id: "unified",
-    icon: <UnifiedIcon />,
-    title: "Unified Guest Experience",
-    description:
-      "Bring every in-room digital interaction - welcome, entertainment, services, and discovery - into one seamless, elegant platform.",
+      "Schedule content based on time of day, day of week, or specific dates. Show breakfast menus in the morning and dinner specials at night automatically.",
+    icon: <ScheduleIcon />,
+    accentFrom: "#00D4AA",
+    accentTo: "#8B5CF6",
   },
 ] as const;
 
@@ -62,7 +56,7 @@ const gridVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: { delayChildren: 0.1, staggerChildren: 0.1 },
+    transition: { delayChildren: 0.1, staggerChildren: 0.13 },
   },
 };
 
@@ -71,23 +65,22 @@ const cardVariants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.65, ease: "easeOut" as const },
+    transition: { duration: 0.7, ease: "easeOut" as const },
   },
 };
 
 /* ════════════════════════════════════════════════════════════
-   HTV FEATURES (MATCHES WF FEATURES DESIGN EXACTLY)
+   DS BENEFITS
    ════════════════════════════════════════════════════════════ */
-export default function HTVFeatures() {
+export default function DSBenefits() {
   return (
     <section
-      id="htv-features"
-      aria-labelledby="htv-features-heading"
+      id="ds-benefits"
+      aria-labelledby="ds-benefits-heading"
       style={{
         backgroundColor: "#F8FAFF",
         paddingTop: "6rem",
         paddingBottom: "6rem",
-        position: "relative",
       }}
     >
       <div className="container-bionics">
@@ -113,11 +106,11 @@ export default function HTVFeatures() {
               marginBottom: "1.25rem",
             }}
           >
-            Platform Capabilities
+            Why Bionics Digital Signage
           </span>
 
           <h2
-            id="htv-features-heading"
+            id="ds-benefits-heading"
             style={{
               fontSize: "clamp(1.75rem, 4vw, 2.75rem)",
               fontWeight: 800,
@@ -125,11 +118,11 @@ export default function HTVFeatures() {
               lineHeight: 1.15,
               letterSpacing: "-0.02em",
               marginBottom: "1.25rem",
-              maxWidth: "20ch",
+              maxWidth: "24ch",
               marginInline: "auto",
             }}
           >
-            Everything Guests Need,{" "}
+            Why Forward-Thinking Brands Choose{" "}
             <span
               style={{
                 background: "linear-gradient(135deg, #00D4AA, #4A6CF7, #8B5CF6)",
@@ -138,7 +131,7 @@ export default function HTVFeatures() {
                 backgroundClip: "text",
               }}
             >
-              Right From the TV
+              Bionics Signage
             </span>
           </h2>
 
@@ -147,16 +140,15 @@ export default function HTVFeatures() {
               fontSize: "1.0625rem",
               color: "#4B5563",
               lineHeight: 1.75,
-              maxWidth: 520,
+              maxWidth: 560,
               marginInline: "auto",
             }}
           >
-            Bionics Hospitality TV is built to deliver rich, intuitive guest
-            experiences across every feature of modern in-room hospitality.
+            Replace static, outdated communication with dynamic visual experiences that engage, inform, and convert your audience instantly.
           </p>
         </motion.div>
 
-        {/* ── Feature Cards Grid ───────────────────────────── */}
+        {/* ── Benefit Cards - 2x2 spacious grid ───────────── */}
         <motion.div
           variants={gridVariants}
           initial="hidden"
@@ -164,29 +156,31 @@ export default function HTVFeatures() {
           viewport={{ once: true, margin: "-80px" }}
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))",
-            gap: "1.25rem",
+            gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))",
+            gap: "1.5rem",
           }}
         >
-          {FEATURES.map((feature, index) => (
+          {BENEFITS.map((benefit) => (
             <motion.div
-              key={feature.id}
+              key={benefit.id}
               variants={cardVariants}
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.3 }}
               style={{
                 backgroundColor: "#FFFFFF",
                 border: "1px solid #E8EDF5",
-                borderRadius: 20,
-                padding: "1.875rem",
+                borderRadius: 24,
+                padding: "2.5rem",
                 boxShadow: "0 4px 24px rgba(0,0,0,0.06)",
                 willChange: "transform",
+                position: "relative",
+                overflow: "hidden",
                 transition: "box-shadow 0.3s ease, border-color 0.3s ease",
               }}
               onMouseEnter={(e) => {
                 const el = e.currentTarget as HTMLDivElement;
-                el.style.boxShadow = "0 8px 40px rgba(74,108,247,0.12)";
-                el.style.borderColor = "rgba(74,108,247,0.3)";
+                el.style.boxShadow = "0 12px 48px rgba(74,108,247,0.12)";
+                el.style.borderColor = "rgba(74,108,247,0.25)";
               }}
               onMouseLeave={(e) => {
                 const el = e.currentTarget as HTMLDivElement;
@@ -194,54 +188,59 @@ export default function HTVFeatures() {
                 el.style.borderColor = "#E8EDF5";
               }}
             >
+              {/* Gradient top accent */}
+              <div
+                aria-hidden="true"
+                style={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  height: 3,
+                  background: `linear-gradient(90deg, ${benefit.accentFrom}, ${benefit.accentTo})`,
+                  borderRadius: "24px 24px 0 0",
+                }}
+              />
+
               {/* Icon */}
               <div
                 style={{
-                  width: 48,
-                  height: 48,
-                  borderRadius: 14,
-                  background:
-                    index % 3 === 0
-                      ? "rgba(0,212,170,0.08)"
-                      : index % 3 === 1
-                      ? "rgba(74,108,247,0.08)"
-                      : "rgba(139,92,246,0.08)",
+                  width: 52,
+                  height: 52,
+                  borderRadius: 16,
+                  background: `linear-gradient(135deg, ${benefit.accentFrom}15, ${benefit.accentTo}15)`,
+                  border: `1px solid ${benefit.accentFrom}20`,
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  marginBottom: "1.25rem",
-                  color:
-                    index % 3 === 0
-                      ? "#00D4AA"
-                      : index % 3 === 1
-                      ? "#4A6CF7"
-                      : "#8B5CF6",
+                  marginBottom: "1.5rem",
+                  color: benefit.accentFrom,
                 }}
               >
-                {feature.icon}
+                {benefit.icon}
               </div>
 
               <h3
                 style={{
-                  fontSize: "1rem",
+                  fontSize: "1.1875rem",
                   fontWeight: 700,
                   color: "#0D0D0D",
-                  marginBottom: "0.625rem",
+                  marginBottom: "0.875rem",
                   lineHeight: 1.3,
                 }}
               >
-                {feature.title}
+                {benefit.title}
               </h3>
 
               <p
                 style={{
-                  fontSize: "0.9rem",
+                  fontSize: "0.9375rem",
                   color: "#4B5563",
-                  lineHeight: 1.7,
+                  lineHeight: 1.8,
                   margin: 0,
                 }}
               >
-                {feature.description}
+                {benefit.description}
               </p>
             </motion.div>
           ))}
@@ -251,10 +250,10 @@ export default function HTVFeatures() {
   );
 }
 
-/* ── Icons (24px stroke) ──────────────────────────────────── */
+/* ── Icons ────────────────────────────────────────────────── */
 const iconProps = {
-  width: 22,
-  height: 22,
+  width: 24,
+  height: 24,
   viewBox: "0 0 24 24",
   fill: "none" as const,
   stroke: "currentColor",
@@ -264,55 +263,39 @@ const iconProps = {
   "aria-hidden": true,
 };
 
-function WelcomeIcon() {
+function CentralizedIcon() {
   return (
     <svg {...iconProps}>
-      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-      <circle cx="12" cy="7" r="4" />
+      <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+      <line x1="8" y1="21" x2="16" y2="21" />
+      <line x1="12" y1="17" x2="12" y2="21" />
+      <path d="M12 7L12 13M9 10L15 10" />
     </svg>
   );
 }
-function EntertainmentIcon() {
+function RealTimeIcon() {
   return (
     <svg {...iconProps}>
-      <rect x="2" y="3" width="20" height="14" rx="2" />
-      <path d="M8 21h8" />
-      <path d="M12 17v4" />
+      <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
     </svg>
   );
 }
-function MusicIcon() {
+function HardwareIcon() {
   return (
     <svg {...iconProps}>
-      <path d="M9 18V5l12-2v13" />
-      <circle cx="6" cy="18" r="3" />
-      <circle cx="18" cy="16" r="3" />
+      <path d="M5 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1" />
+      <polygon points="12 15 17 21 7 21 12 15" />
     </svg>
   );
 }
-function GuideIcon() {
+function ScheduleIcon() {
   return (
     <svg {...iconProps}>
-      <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-      <polyline points="9,22 9,12 15,12 15,22" />
-    </svg>
-  );
-}
-function NearbyIcon() {
-  return (
-    <svg {...iconProps}>
-      <circle cx="12" cy="12" r="10" />
-      <polygon points="16.24,7.76 14.12,14.12 7.76,16.24 9.88,9.88 16.24,7.76" />
-    </svg>
-  );
-}
-function UnifiedIcon() {
-  return (
-    <svg {...iconProps}>
-      <rect x="2" y="2" width="9" height="9" rx="2" />
-      <rect x="13" y="2" width="9" height="9" rx="2" />
-      <rect x="2" y="13" width="9" height="9" rx="2" />
-      <rect x="13" y="13" width="9" height="9" rx="2" />
+      <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+      <line x1="16" y1="2" x2="16" y2="6" />
+      <line x1="8" y1="2" x2="8" y2="6" />
+      <line x1="3" y1="10" x2="21" y2="10" />
+      <path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01M16 18h.01" />
     </svg>
   );
 }

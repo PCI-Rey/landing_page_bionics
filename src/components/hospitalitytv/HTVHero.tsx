@@ -64,7 +64,7 @@ export default function HTVHero() {
       }}
     >
       {/* ══════════════════════════════════════════════════════════
-          BACKGROUND — identical pattern to WFHero
+          BACKGROUND - identical pattern to WFHero
           ══════════════════════════════════════════════════════════ */}
       <div
         aria-hidden="true"
@@ -194,23 +194,7 @@ export default function HTVHero() {
           }}
         />
 
-        {/* Layer 4: Corner frame markers */}
-        <div style={{ position: "absolute", top: 40, left: 40 }}>
-          <div style={{ width: 24, height: 1.5, background: "rgba(74,108,247,0.22)" }} />
-          <div style={{ width: 1.5, height: 24, background: "rgba(74,108,247,0.22)", marginTop: -1.5 }} />
-        </div>
-        <div style={{ position: "absolute", top: 40, right: 40, display: "flex", flexDirection: "column", alignItems: "flex-end" }}>
-          <div style={{ width: 24, height: 1.5, background: "rgba(74,108,247,0.22)" }} />
-          <div style={{ width: 1.5, height: 24, background: "rgba(74,108,247,0.22)", marginTop: -1.5 }} />
-        </div>
-        <div style={{ position: "absolute", bottom: 40, left: 40, display: "flex", flexDirection: "column-reverse" }}>
-          <div style={{ width: 24, height: 1.5, background: "rgba(74,108,247,0.22)" }} />
-          <div style={{ width: 1.5, height: 24, background: "rgba(74,108,247,0.22)", marginBottom: -1.5 }} />
-        </div>
-        <div style={{ position: "absolute", bottom: 40, right: 40, display: "flex", flexDirection: "column-reverse", alignItems: "flex-end" }}>
-          <div style={{ width: 24, height: 1.5, background: "rgba(74,108,247,0.22)" }} />
-          <div style={{ width: 1.5, height: 24, background: "rgba(74,108,247,0.22)", marginBottom: -1.5 }} />
-        </div>
+
 
         {/* Layer 5: Center vignette */}
         <div
@@ -303,9 +287,9 @@ export default function HTVHero() {
               margin: "0 auto 2.5rem",
             }}
           >
-            Give guests everything they need — curated entertainment, hotel
+            Give guests everything they need - curated entertainment, hotel
             services, in-room music, nearby place discovery, and a personalized
-            welcome — all through one beautifully integrated TV platform designed
+            welcome - all through one beautifully integrated TV platform designed
             for modern hospitality.
           </motion.p>
 
@@ -373,7 +357,7 @@ export default function HTVHero() {
           </motion.p>
         </motion.div>
 
-        {/* ── Image Composition — 3 panel, middle elevated ─── */}
+        {/* ── Image Composition - 3 panel, middle elevated ─── */}
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -394,7 +378,7 @@ export default function HTVHero() {
             margin: "0 auto",
           }}
         >
-          {/* Image 1 — Left */}
+          {/* Image 1 - Left */}
           <motion.div
             variants={imageVariants}
             whileHover={{ scale: 1.02 }}
@@ -409,7 +393,7 @@ export default function HTVHero() {
           >
             <Image
               src="/assets/images/hospitality_1.png"
-              alt="Bionics Hospitality TV — Personalized Welcome Experience"
+              alt="Bionics Hospitality TV - Personalized Welcome Experience"
               width={640}
               height={480}
               sizes="(max-width: 768px) 100vw, 33vw"
@@ -424,7 +408,7 @@ export default function HTVHero() {
             />
           </motion.div>
 
-          {/* Image 2 — Middle (elevated) */}
+          {/* Image 2 - Middle (elevated) */}
           <motion.div
             variants={imageVariants}
             whileHover={{ scale: 1.02 }}
@@ -441,7 +425,7 @@ export default function HTVHero() {
           >
             <Image
               src="/assets/images/hospitality_3.png"
-              alt="Bionics Hospitality TV — Integrated Entertainment Playback"
+              alt="Bionics Hospitality TV - Integrated Entertainment Playback"
               width={640}
               height={480}
               sizes="(max-width: 768px) 100vw, 33vw"
@@ -456,7 +440,7 @@ export default function HTVHero() {
             />
           </motion.div>
 
-          {/* Image 3 — Right */}
+          {/* Image 3 - Right */}
           <motion.div
             variants={imageVariants}
             whileHover={{ scale: 1.02 }}
@@ -471,7 +455,7 @@ export default function HTVHero() {
           >
             <Image
               src="/assets/images/hospitality_5.png"
-              alt="Bionics Hospitality TV — Hotel Guide & Guest Services"
+              alt="Bionics Hospitality TV - Hotel Guide & Guest Services"
               width={640}
               height={480}
               sizes="(max-width: 768px) 100vw, 33vw"

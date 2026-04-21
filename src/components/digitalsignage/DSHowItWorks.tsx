@@ -137,7 +137,7 @@ export default function DSHowItWorks() {
           </p>
         </motion.div>
 
-        {/* ── Steps — alternating layout ───────────────────── */}
+        {/* ── Steps - alternating layout ───────────────────── */}
         <div
           style={{
             display: "flex",

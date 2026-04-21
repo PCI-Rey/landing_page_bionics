@@ -15,13 +15,13 @@ const FAQS = [
     id: "customize",
     question: "Can I customize the look and feel of my displays?",
     answer:
-      "Absolutely. The Bionics Layout Designer lets you build multi-layer, multi-zone layouts with your own branding — fonts, colors, logos, and media. You can create templates for different times of day, campaigns, or locations, and apply them across all your screens instantly.",
+      "Absolutely. The Bionics Layout Designer lets you build multi-layer, multi-zone layouts with your own branding - fonts, colors, logos, and media. You can create templates for different times of day, campaigns, or locations, and apply them across all your screens instantly.",
   },
   {
     id: "remote-update",
     question: "How do I update my content remotely?",
     answer:
-      "Log in to the Bionics Web CMS from any device — phone, tablet, or laptop — and push updates instantly. You can schedule content changes in advance or update live displays in real time. All changes sync automatically across your entire network.",
+      "Log in to the Bionics Web CMS from any device - phone, tablet, or laptop - and push updates instantly. You can schedule content changes in advance or update live displays in real time. All changes sync automatically across your entire network.",
   },
   {
     id: "offline",
@@ -33,7 +33,7 @@ const FAQS = [
     id: "get-started",
     question: "How do I get started with Bionics?",
     answer:
-      "Getting started is simple — fill out our contact form or click 'Schedule a Demo' and our team will reach out within one business day. We'll walk you through a free consultation, tailor a plan for your needs, and handle the full installation and onboarding process.",
+      "Getting started is simple - fill out our contact form or click 'Schedule a Demo' and our team will reach out within one business day. We'll walk you through a free consultation, tailor a plan for your needs, and handle the full installation and onboarding process.",
   },
 ] as const;
 

@@ -8,7 +8,7 @@ const BENEFITS = [
     id: "visitor-experience",
     title: "Elevated Visitor Experience",
     description:
-      "First impressions define property perception. Bionics Wayfinding transforms arrival into a refined, guided experience — reducing confusion, boosting confidence, and leaving lasting positive impressions on every visitor.",
+      "First impressions define property perception. Bionics Wayfinding transforms arrival into a refined, guided experience - reducing confusion, boosting confidence, and leaving lasting positive impressions on every visitor.",
     icon: <ExperienceIcon />,
     accentFrom: "#00D4AA",
     accentTo: "#4A6CF7",
@@ -17,7 +17,7 @@ const BENEFITS = [
     id: "staff-dependency",
     title: "Reduced Staff Dependency",
     description:
-      "Empower visitors to navigate independently with self-service kiosks that answer directional queries 24/7 — freeing your team to focus on hospitality and higher-value interactions.",
+      "Empower visitors to navigate independently with self-service kiosks that answer directional queries 24/7 - freeing your team to focus on hospitality and higher-value interactions.",
     icon: <StaffIcon />,
     accentFrom: "#4A6CF7",
     accentTo: "#8B5CF6",
@@ -26,7 +26,7 @@ const BENEFITS = [
     id: "brand-perception",
     title: "Stronger Brand & Property Perception",
     description:
-      "A beautifully branded, seamless navigation system signals quality and attention to detail — reinforcing your property's premium positioning to tenants, guests, clients, and investors.",
+      "A beautifully branded, seamless navigation system signals quality and attention to detail - reinforcing your property's premium positioning to tenants, guests, clients, and investors.",
     icon: <BrandIcon />,
     accentFrom: "#8B5CF6",
     accentTo: "#00D4AA",
@@ -35,7 +35,7 @@ const BENEFITS = [
     id: "dynamic-updates",
     title: "Faster Updates Across Dynamic Spaces",
     description:
-      "Retail openings, department relocations, event changes — update any destination across all kiosks in real time from a single dashboard, eliminating outdated signage and visitor frustration.",
+      "Retail openings, department relocations, event changes - update any destination across all kiosks in real time from a single dashboard, eliminating outdated signage and visitor frustration.",
     icon: <UpdateIcon />,
     accentFrom: "#00D4AA",
     accentTo: "#8B5CF6",
@@ -145,11 +145,11 @@ export default function WFBenefits() {
             }}
           >
             Purpose-built for environments where visitor experience is a
-            competitive advantage — not an afterthought.
+            competitive advantage - not an afterthought.
           </p>
         </motion.div>
 
-        {/* ── Benefit Cards — 2x2 spacious grid ───────────── */}
+        {/* ── Benefit Cards - 2x2 spacious grid ───────────── */}
         <motion.div
           variants={gridVariants}
           initial="hidden"

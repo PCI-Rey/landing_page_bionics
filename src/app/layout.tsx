@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import ClearCache from "@/components/ClearCache";
 
-/* ── Viewport — ensures proper mobile rendering ───────────── */
+/* ── Viewport - ensures proper mobile rendering ───────────── */
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
@@ -11,9 +11,9 @@ export const viewport: Viewport = {
 
 /* ── SEO Metadata ─────────────────────────────────────────── */
 export const metadata: Metadata = {
-  title: "Bionics — Choose Your Smart Solution",
+  title: "Bionics - Choose Your Smart Solution",
   description:
-    "Select the Bionics solution that fits your business needs. Digital Signage, Hospitality TV, and Wayfinding — powered by cutting-edge technology.",
+    "Select the Bionics solution that fits your business needs. Digital Signage, Hospitality TV, and Wayfinding - powered by cutting-edge technology.",
   keywords: [
     "Bionics",
     "Digital Signage",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   authors: [{ name: "Bionics" }],
   robots: "index, follow",
   openGraph: {
-    title: "Bionics — Choose Your Smart Solution",
+    title: "Bionics - Choose Your Smart Solution",
     description:
       "Select the Bionics solution that fits your business needs. Digital Signage, Hospitality TV, and Wayfinding.",
     type: "website",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Bionics — Choose Your Smart Solution",
+    title: "Bionics - Choose Your Smart Solution",
     description:
       "Select the Bionics solution that fits your business needs. Digital Signage, Hospitality TV, and Wayfinding.",
   },
@@ -53,7 +53,7 @@ export default function RootLayout({
       style={{ colorScheme: "light" }}
     >
       <head>
-        {/* Force light color scheme — prevents OS dark-mode from inverting our white theme */}
+        {/* Force light color scheme - prevents OS dark-mode from inverting our white theme */}
         <meta name="color-scheme" content="light" />
         <meta name="theme-color" content="#FFFFFF" />
       </head>

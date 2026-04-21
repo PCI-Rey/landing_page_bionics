@@ -29,7 +29,7 @@ const FEATURES = [
     id: "touch-friendly",
     title: "Touch-Friendly Interface",
     description:
-      "Engineered for public kiosks — responsive, intuitive, and accessible for all visitor types.",
+      "Engineered for public kiosks - responsive, intuitive, and accessible for all visitor types.",
     icon: <TouchIcon />,
   },
   {

@@ -179,7 +179,7 @@ export default function WFGallery() {
             >
               <Image
                 src="/assets/images/wayfinding_1.jpeg"
-                alt="Bionics Wayfinding — premium lobby kiosk display"
+                alt="Bionics Wayfinding - premium lobby kiosk display"
                 width={900}
                 height={700}
                 sizes="55vw"

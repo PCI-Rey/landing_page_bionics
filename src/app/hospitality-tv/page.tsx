@@ -4,7 +4,8 @@ import Footer from "@/components/sections/Footer";
 import HTVHero from "@/components/hospitalitytv/HTVHero";
 import HTVFeatures from "@/components/hospitalitytv/HTVFeatures";
 import HTVShowcase from "@/components/hospitalitytv/HTVShowcase";
-import HTVExperience from "@/components/hospitalitytv/HTVExperience";
+import HTVUseCases from "@/components/hospitalitytv/HTVUseCases";
+import HTVWorkflow from "@/components/hospitalitytv/HTVWorkflow";
 import HTVBenefits from "@/components/hospitalitytv/HTVBenefits";
 import HTVFAQ from "@/components/hospitalitytv/HTVFAQ";
 import HTVCTABanner from "@/components/hospitalitytv/HTVCTABanner";
@@ -61,7 +62,8 @@ export default function HospitalityTVPage() {
         <HTVHero />
         <HTVFeatures />
         <HTVShowcase />
-        <HTVExperience />
+        <HTVUseCases />
+        <HTVWorkflow />
         <HTVBenefits />
         <HTVFAQ />
         <HTVCTABanner />

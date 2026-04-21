@@ -20,7 +20,7 @@ const STATS = [
 const WHY_POINTS = [
   "Fully branded to match your property identity",
   "Multi-floor and multi-building navigation support",
-  "Real-time CMS — update any kiosk from anywhere",
+  "Real-time CMS - update any kiosk from anywhere",
   "End-to-end delivery: mapping, setup, and aftersales",
 ] as const;
 
@@ -266,7 +266,7 @@ export default function WFContact() {
                 }}
               >
                 From luxury retail to enterprise campuses, Bionics delivers
-                elegant, branded, and fully managed wayfinding solutions —
+                elegant, branded, and fully managed wayfinding solutions -
                 tailored to every property&apos;s unique requirements.
               </p>
 
@@ -525,7 +525,7 @@ export default function WFContact() {
                     </motion.div>
                   </div>
 
-                  {/* Solution selector — pre-selected: Wayfinding */}
+                  {/* Solution selector - pre-selected: Wayfinding */}
                   <motion.div variants={slideUpVariant}>
                     <FormLabel htmlFor="wf-solution" required>
                       Solution
@@ -595,7 +595,7 @@ export default function WFContact() {
                       onChange={handleChange}
                       onFocus={() => setFocused("specialRequest")}
                       onBlur={() => setFocused(null)}
-                      placeholder="Describe your property — building type, number of floors, estimated footfall, and any special requirements..."
+                      placeholder="Describe your property - building type, number of floors, estimated footfall, and any special requirements..."
                       rows={4}
                       style={{
                         ...inputStyle("specialRequest"),

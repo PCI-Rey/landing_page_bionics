@@ -2,54 +2,54 @@
 
 import { motion } from "framer-motion";
 
-/* ── Use Case Data ────────────────────────────────────────── */
+/* ── Use Case Data (Guest Experience) ─────────────────────── */
 const USE_CASES = [
   {
-    id: "malls",
-    title: "Shopping Malls",
+    id: "welcome",
+    title: "Personalized Welcome",
     description:
-      "Help shoppers locate stores, dining, restrooms, and parking levels instantly - reducing abandonment and increasing dwell time across every floor.",
-    icon: "🏬",
+      "The moment a guest enters their room, they're greeted by name with a custom welcome screen tailored to their stay.",
+    icon: "👋",
     accent: "#00D4AA",
   },
   {
-    id: "hospitals",
-    title: "Hospitals & Clinics",
+    id: "entertainment",
+    title: "Entertainment & Media",
     description:
-      "Guide patients and visitors to departments, wards, and services with calm, clear navigation that reduces anxiety and staff interruptions.",
-    icon: "🏥",
+      "Give guests easy access to movies, live TV channels, and streaming content from a beautifully designed interface.",
+    icon: "🎬",
     accent: "#4A6CF7",
   },
   {
-    id: "offices",
-    title: "Office Buildings",
+    id: "music",
+    title: "In-Room Audio",
     description:
-      "Impress clients and streamline employee movement with elegant lobby directories and floor-by-floor guidance throughout corporate towers.",
-    icon: "🏢",
+      "Let guests set the perfect mood with curated music and ambient soundscapes, creating a truly immersive stay.",
+    icon: "🎵",
     accent: "#8B5CF6",
   },
   {
-    id: "hotels",
-    title: "Hotels & Resorts",
+    id: "guide",
+    title: "Hotel Directory",
     description:
-      "Elevate the guest journey from arrival to checkout with branded, multi-language wayfinding integrated seamlessly into the property experience.",
-    icon: "🏨",
+      "Showcase dining menus, spa services, and transport schedules in an interactive, easy-to-navigate digital format.",
+    icon: "📖",
     accent: "#00D4AA",
   },
   {
-    id: "campuses",
-    title: "Campuses & Universities",
+    id: "nearby",
+    title: "Local Discovery",
     description:
-      "Navigate large academic campuses with building directories, event locations, and dynamic scheduling information accessible at every kiosk.",
-    icon: "🎓",
+      "Help guests explore top attractions, restaurants, and hidden gems around the hotel with curated recommendations.",
+    icon: "🗺️",
     accent: "#4A6CF7",
   },
   {
-    id: "public",
-    title: "Public Facilities",
+    id: "unified",
+    title: "Seamless Integration",
     description:
-      "Serve diverse populations in airports, transit hubs, and government buildings with inclusive, multilingual, and ADA-compliant wayfinding.",
-    icon: "🏛️",
+      "Bring every digital interaction into one elegant platform that feels naturally aligned with your hotel's premium brand.",
+    icon: "✨",
     accent: "#8B5CF6",
   },
 ] as const;
@@ -82,13 +82,13 @@ const cardVariants = {
 };
 
 /* ════════════════════════════════════════════════════════════
-   WF USE CASES
+   HTV USE CASES
    ════════════════════════════════════════════════════════════ */
-export default function WFUseCases() {
+export default function HTVUseCases() {
   return (
     <section
-      id="wf-use-cases"
-      aria-labelledby="wf-usecases-heading"
+      id="htv-use-cases"
+      aria-labelledby="htv-usecases-heading"
       style={{
         backgroundColor: "#F8FAFF",
         paddingTop: "6rem",
@@ -118,11 +118,11 @@ export default function WFUseCases() {
               marginBottom: "1.25rem",
             }}
           >
-            Built for Every Space
+            Guest Experience
           </span>
 
           <h2
-            id="wf-usecases-heading"
+            id="htv-usecases-heading"
             style={{
               fontSize: "clamp(1.75rem, 4vw, 2.75rem)",
               fontWeight: 800,
@@ -132,7 +132,7 @@ export default function WFUseCases() {
               marginBottom: "1.25rem",
             }}
           >
-            Crafted for{" "}
+            Delight Guests at{" "}
             <span
               style={{
                 background: "linear-gradient(135deg, #00D4AA, #4A6CF7, #8B5CF6)",
@@ -141,7 +141,7 @@ export default function WFUseCases() {
                 backgroundClip: "text",
               }}
             >
-              High-Expectation Environments
+              Every Touchpoint
             </span>
           </h2>
 
@@ -154,8 +154,7 @@ export default function WFUseCases() {
               marginInline: "auto",
             }}
           >
-            From luxury retail to life-critical healthcare - Bionics Wayfinding
-            adapts to any environment where visitor confidence matters.
+            From the moment they arrive to the moment they check out, every in-room interaction is designed to elevate their stay.
           </p>
         </motion.div>
 

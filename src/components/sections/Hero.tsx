@@ -8,7 +8,7 @@ import {
   useTransform,
 } from "framer-motion";
 
-/* ── Animation variants — staggered fade-up ────────── */
+/* ── Animation variants - staggered fade-up ────────── */
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
@@ -94,7 +94,7 @@ export default function Hero() {
       }}
     >
       {/* ════════════════════════════════════════════════════
-          BACKGROUND — pointer-events: none, aria-hidden
+          BACKGROUND - pointer-events: none, aria-hidden
           ════════════════════════════════════════════════════ */}
       <div
         aria-hidden="true"
@@ -153,7 +153,7 @@ export default function Hero() {
       </div>
 
       {/* ════════════════════════════════════════════════════
-          CONTENT — z-index: 10
+          CONTENT - z-index: 10
           ════════════════════════════════════════════════════ */}
       <motion.div
         className="container-bionics"
@@ -347,7 +347,7 @@ export default function Hero() {
           ))}
         </motion.div>
 
-        {/* Scroll indicator — hidden on mobile */}
+        {/* Scroll indicator - hidden on mobile */}
         {!isMobile && (
           <motion.div
             variants={itemVariants}

@@ -25,7 +25,7 @@ const TRUST_SIGNALS = [
 
 const WHY_POINTS = [
   "Fully brandable welcome and guide screens for your property",
-  "Centralized CMS — update content across all rooms instantly",
+  "Centralized CMS - update content across all rooms instantly",
   "Supports entertainment, music, hotel guide, and nearby discovery",
   "End-to-end support from setup to ongoing aftersales",
 ] as const;
@@ -260,9 +260,9 @@ export default function HTVContact() {
                   marginBottom: isMobile ? "1.25rem" : "1.75rem",
                 }}
               >
-                We deliver complete in-room guest experience platforms — from
+                We deliver complete in-room guest experience platforms - from
                 personalized welcome screens to entertainment, music, hotel guides,
-                and nearby discovery — all in one beautifully integrated system.
+                and nearby discovery - all in one beautifully integrated system.
               </p>
 
               {/* Why points */}
@@ -502,7 +502,7 @@ export default function HTVContact() {
                     </motion.div>
                   </div>
 
-                  {/* Solution selector — pre-selected: Hospitality TV */}
+                  {/* Solution selector - pre-selected: Hospitality TV */}
                   <motion.div variants={slideUpVariant}>
                     <FormLabel htmlFor="htv-solution" required>Solution</FormLabel>
                     <div style={{ position: "relative" }}>

@@ -3,8 +3,9 @@ import NavbarProduct from "@/components/sections/NavbarProduct";
 import Footer from "@/components/sections/Footer";
 import DSHero from "@/components/digitalsignage/DSHero";
 import DSFeatures from "@/components/digitalsignage/DSFeatures";
+import DSUseCases from "@/components/digitalsignage/DSUseCases";
 import DSWorkflow from "@/components/digitalsignage/DSWorkflow";
-import DSHowItWorks from "@/components/digitalsignage/DSHowItWorks";
+import DSBenefits from "@/components/digitalsignage/DSBenefits";
 import DSFAQ from "@/components/digitalsignage/DSFAQ";
 import DSCTABanner from "@/components/digitalsignage/DSCTABanner";
 import DSContact from "@/components/digitalsignage/DSContact";
@@ -13,7 +14,7 @@ import DSContact from "@/components/digitalsignage/DSContact";
 export const metadata: Metadata = {
   title: "Digital Signage Solutions | Bionics",
   description:
-    "Transform your business communication with Bionics Digital Signage — centralized content distribution, real-time scheduling, and multi-platform support for any screen, anywhere.",
+    "Transform your business communication with Bionics Digital Signage - centralized content distribution, real-time scheduling, and multi-platform support for any screen, anywhere.",
   keywords: [
     "Digital Signage",
     "Bionics Digital Signage",
@@ -29,7 +30,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Digital Signage Solutions | Bionics",
     description:
-      "Transform your business communication with Bionics Digital Signage — centralized content distribution, real-time scheduling, and multi-platform support.",
+      "Transform your business communication with Bionics Digital Signage - centralized content distribution, real-time scheduling, and multi-platform support.",
     type: "website",
     locale: "en_US",
     siteName: "Bionics",
@@ -38,7 +39,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Digital Signage Solutions | Bionics",
     description:
-      "Transform your business communication with Bionics Digital Signage — centralized content distribution, real-time scheduling, and multi-platform support.",
+      "Transform your business communication with Bionics Digital Signage - centralized content distribution, real-time scheduling, and multi-platform support.",
   },
 };
 
@@ -57,8 +58,9 @@ export default function DigitalSignagePage() {
       >
         <DSHero />
         <DSFeatures />
+        <DSUseCases />
         <DSWorkflow />
-        <DSHowItWorks />
+        <DSBenefits />
         <DSFAQ />
         <DSCTABanner />
         <DSContact />

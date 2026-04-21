@@ -4,11 +4,11 @@ import ProductCards from "@/components/sections/ProductCards";
 import ContactForm from "@/components/sections/ContactForm";
 import Footer from "@/components/sections/Footer";
 
-/* ── Page — Server Component (no "use client") ────────────── */
+/* ── Page - Server Component (no "use client") ────────────── */
 export default function Home() {
   return (
     <>
-      {/* Fixed navigation — always on top */}
+      {/* Fixed navigation - always on top */}
       <Navbar />
 
       {/* Main page content */}

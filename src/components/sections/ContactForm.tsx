@@ -173,7 +173,7 @@ export default function ContactForm() {
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
           >
-            {/* Info card — white, bordered with gradient left accent */}
+            {/* Info card - white, bordered with gradient left accent */}
             <div style={{
               position: "relative",
               backgroundColor: "#FFFFFF",

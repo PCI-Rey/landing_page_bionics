@@ -9,31 +9,31 @@ const FAQS = [
     id: "branding",
     question: "Can the interface be customized to match our brand identity?",
     answer:
-      "Absolutely. Bionics Wayfinding is fully white-label customizable — from color palettes, typography, and logo placement to UI layout, screen transitions, and language preferences. Our team works with your design guidelines to deliver a wayfinding experience that feels native to your property.",
+      "Absolutely. Bionics Wayfinding is fully white-label customizable - from color palettes, typography, and logo placement to UI layout, screen transitions, and language preferences. Our team works with your design guidelines to deliver a wayfinding experience that feels native to your property.",
   },
   {
     id: "multi-floor",
     question: "Does it support multiple floors or building zones?",
     answer:
-      "Yes. Our platform is built for complex, multi-level environments. You can configure an unlimited number of floors, zones, and buildings — all interconnected within a single navigation graph that guides visitors through the most efficient routes, including elevator and stairway integration.",
+      "Yes. Our platform is built for complex, multi-level environments. You can configure an unlimited number of floors, zones, and buildings - all interconnected within a single navigation graph that guides visitors through the most efficient routes, including elevator and stairway integration.",
   },
   {
     id: "remote-updates",
     question: "Can directory and route information be updated remotely?",
     answer:
-      "All updates are handled through the Bionics cloud-based CMS. Whether you're adding a new tenant, updating operating hours, or reflecting a temporary closure — changes are pushed to every connected kiosk in real time, with no on-site intervention required.",
+      "All updates are handled through the Bionics cloud-based CMS. Whether you're adding a new tenant, updating operating hours, or reflecting a temporary closure - changes are pushed to every connected kiosk in real time, with no on-site intervention required.",
   },
   {
     id: "touch-optimized",
     question: "Is it optimized for touch screen experiences?",
     answer:
-      "Yes — every aspect of the interface is engineered for public touch screen use. Tap targets are generously sized, transitions are smooth and immediate, and the UI is designed for first-time visitors with no prior experience navigating the system. We also adhere to ADA accessibility standards.",
+      "Yes - every aspect of the interface is engineered for public touch screen use. Tap targets are generously sized, transitions are smooth and immediate, and the UI is designed for first-time visitors with no prior experience navigating the system. We also adhere to ADA accessibility standards.",
   },
   {
     id: "implementation",
     question: "How long does implementation typically take?",
     answer:
-      "For most properties, a standard implementation takes between 2 to 4 weeks — depending on the scale of the space and complexity of the directory. This includes space mapping, content configuration, UI branding, hardware deployment, and staff training. We provide end-to-end support throughout the entire process.",
+      "For most properties, a standard implementation takes between 2 to 4 weeks - depending on the scale of the space and complexity of the directory. This includes space mapping, content configuration, UI branding, hardware deployment, and staff training. We provide end-to-end support throughout the entire process.",
   },
 ] as const;
 

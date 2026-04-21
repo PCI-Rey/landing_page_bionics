@@ -64,14 +64,14 @@ export default function WFHero() {
       }}
     >
       {/* ══════════════════════════════════════════════════════════
-          BACKGROUND — identical pattern to landing page Hero
+          BACKGROUND - identical pattern to landing page Hero
           Uses backgroundPosition scroll (no translateY overflow).
           ══════════════════════════════════════════════════════════ */}
       <div
         aria-hidden="true"
         style={{ position: "absolute", inset: 0, zIndex: 0, pointerEvents: "none" }}
       >
-        {/* Layer 1: Scrolling grid via backgroundPosition — never overflows */}
+        {/* Layer 1: Scrolling grid via backgroundPosition - never overflows */}
         <motion.div
           animate={{ backgroundPosition: ["0px 0px", "0px 48px"] }}
           transition={{ repeat: Infinity, duration: 3, ease: "linear" }}
@@ -90,7 +90,7 @@ export default function WFHero() {
           }}
         />
 
-        {/* Layer 2: Soft glow blobs — small drift (±40px max), fully contained */}
+        {/* Layer 2: Soft glow blobs - small drift (±40px max), fully contained */}
         <motion.div
           animate={{ x: [0, 40, -30, 0], y: [0, -40, 30, 0], scale: [1, 1.06, 0.96, 1] }}
           transition={{ repeat: Infinity, duration: 15, ease: "easeInOut" }}
@@ -195,25 +195,9 @@ export default function WFHero() {
           }}
         />
 
-        {/* Layer 4: Corner frame markers */}
-        <div style={{ position: "absolute", top: 40, left: 40 }}>
-          <div style={{ width: 24, height: 1.5, background: "rgba(74,108,247,0.22)" }} />
-          <div style={{ width: 1.5, height: 24, background: "rgba(74,108,247,0.22)", marginTop: -1.5 }} />
-        </div>
-        <div style={{ position: "absolute", top: 40, right: 40, display: "flex", flexDirection: "column", alignItems: "flex-end" }}>
-          <div style={{ width: 24, height: 1.5, background: "rgba(74,108,247,0.22)" }} />
-          <div style={{ width: 1.5, height: 24, background: "rgba(74,108,247,0.22)", marginTop: -1.5 }} />
-        </div>
-        <div style={{ position: "absolute", bottom: 40, left: 40, display: "flex", flexDirection: "column-reverse" }}>
-          <div style={{ width: 24, height: 1.5, background: "rgba(74,108,247,0.22)" }} />
-          <div style={{ width: 1.5, height: 24, background: "rgba(74,108,247,0.22)", marginBottom: -1.5 }} />
-        </div>
-        <div style={{ position: "absolute", bottom: 40, right: 40, display: "flex", flexDirection: "column-reverse", alignItems: "flex-end" }}>
-          <div style={{ width: 24, height: 1.5, background: "rgba(74,108,247,0.22)" }} />
-          <div style={{ width: 1.5, height: 24, background: "rgba(74,108,247,0.22)", marginBottom: -1.5 }} />
-        </div>
 
-        {/* Layer 5: Center vignette — keeps headline readable */}
+
+        {/* Layer 5: Center vignette - keeps headline readable */}
         <div
           style={{
             position: "absolute",
@@ -303,7 +287,7 @@ export default function WFHero() {
             }}
           >
             Help visitors move effortlessly through malls, hospitals, offices,
-            hotels, and public destinations — with intuitive, touch-friendly
+            hotels, and public destinations - with intuitive, touch-friendly
             digital wayfinding designed for premium environments.
           </motion.p>
 
@@ -393,7 +377,7 @@ export default function WFHero() {
             margin: "0 auto",
           }}
         >
-          {/* Image 1 — Left */}
+          {/* Image 1 - Left */}
           <motion.div
             variants={imageVariants}
             whileHover={{ scale: 1.02 }}
@@ -408,7 +392,7 @@ export default function WFHero() {
           >
             <Image
               src="/assets/images/wayfinding_1.jpeg"
-              alt="Bionics Wayfinding — interactive kiosk in a premium space"
+              alt="Bionics Wayfinding - interactive kiosk in a premium space"
               width={640}
               height={480}
               sizes="(max-width: 768px) 100vw, 33vw"
@@ -423,7 +407,7 @@ export default function WFHero() {
             />
           </motion.div>
 
-          {/* Image 2 — Middle (elevated) */}
+          {/* Image 2 - Middle (elevated) */}
           <motion.div
             variants={imageVariants}
             whileHover={{ scale: 1.02 }}
@@ -440,7 +424,7 @@ export default function WFHero() {
           >
             <Image
               src="/assets/images/wayfinding_2.jpeg"
-              alt="Bionics Wayfinding — multi-floor navigation display"
+              alt="Bionics Wayfinding - multi-floor navigation display"
               width={640}
               height={480}
               sizes="(max-width: 768px) 100vw, 33vw"
@@ -455,7 +439,7 @@ export default function WFHero() {
             />
           </motion.div>
 
-          {/* Image 3 — Right */}
+          {/* Image 3 - Right */}
           <motion.div
             variants={imageVariants}
             whileHover={{ scale: 1.02 }}
@@ -470,7 +454,7 @@ export default function WFHero() {
           >
             <Image
               src="/assets/images/wayfinding_3.jpeg"
-              alt="Bionics Wayfinding — directory and map interface"
+              alt="Bionics Wayfinding - directory and map interface"
               width={640}
               height={480}
               sizes="(max-width: 768px) 100vw, 33vw"

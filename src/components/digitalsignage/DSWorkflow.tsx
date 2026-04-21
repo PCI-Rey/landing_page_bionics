@@ -134,12 +134,12 @@ export default function DSWorkflow() {
               marginInline: "auto",
             }}
           >
-            From first conversation to full deployment — we're with you every
+            From first conversation to full deployment - we're with you every
             step of the way.
           </p>
         </motion.div>
 
-        {/* ── Steps — Desktop horizontal ───────────────────── */}
+        {/* ── Steps - Desktop horizontal ───────────────────── */}
         <div className="ds-workflow-desktop">
           <motion.div
             variants={stepsContainerVariants}
@@ -265,7 +265,7 @@ export default function DSWorkflow() {
           </motion.div>
         </div>
 
-        {/* ── Steps — Mobile vertical ──────────────────────── */}
+        {/* ── Steps - Mobile vertical ──────────────────────── */}
         <div className="ds-workflow-mobile">
           <motion.div
             variants={stepsContainerVariants}
@@ -291,7 +291,7 @@ export default function DSWorkflow() {
                   paddingBottom: index < STEPS.length - 1 ? "2.5rem" : 0,
                 }}
               >
-                {/* Left column — circle + vertical line */}
+                {/* Left column - circle + vertical line */}
                 <div
                   style={{
                     display: "flex",
@@ -341,7 +341,7 @@ export default function DSWorkflow() {
                   )}
                 </div>
 
-                {/* Right column — text */}
+                {/* Right column - text */}
                 <div style={{ paddingTop: "0.625rem", paddingBottom: "0.5rem" }}>
                   <h3
                     style={{

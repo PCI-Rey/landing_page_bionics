@@ -13,13 +13,9 @@ const PRODUCTS = [
     features: ["Cloud-managed content", "Real-time updates", "Multi-display sync"],
     highlighted: false,
     icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#4A6CF7" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-        {/* Wide display screen — public signage feel */}
-        <rect x="1" y="5" width="22" height="13" rx="2" />
-        <path d="M5 19v1" /><path d="M19 19v1" />
-        <path d="M5 20h14" />
-        <path d="M8 9h8" /><path d="M8 12h5" />
-      </svg>
+      <span role="img" aria-label="Digital Signage" style={{ fontSize: "2rem", lineHeight: 1 }}>
+        🖥️
+      </span>
     ),
   },
   {
@@ -30,12 +26,9 @@ const PRODUCTS = [
     features: ["Branded interface", "Guest information", "Remote management"],
     highlighted: true,
     icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#4A6CF7" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-        {/* TV with star — premium hotel feel */}
-        <rect x="2" y="4" width="20" height="13" rx="2" />
-        <path d="M7 21h10" /><path d="M12 17v4" />
-        <path d="M12 7.5l.93 2.87h3.02l-2.44 1.77.93 2.87L12 13.24l-2.44 1.77.93-2.87-2.44-1.77h3.02z" fill="#4A6CF7" stroke="none" />
-      </svg>
+      <span role="img" aria-label="Hospitality TV" style={{ fontSize: "2rem", lineHeight: 1 }}>
+        🏨
+      </span>
     ),
   },
   {
@@ -46,12 +39,9 @@ const PRODUCTS = [
     features: ["Interactive maps", "Touch-enabled kiosks", "Multi-floor support"],
     highlighted: false,
     icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#4A6CF7" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-        {/* Compass — navigation/wayfinding feel */}
-        <circle cx="12" cy="12" r="10" />
-        <polygon points="12,3 14.5,9.5 12,12 9.5,9.5" fill="#4A6CF7" stroke="none" />
-        <polygon points="12,21 9.5,14.5 12,12 14.5,14.5" fill="none" stroke="#4A6CF7" strokeWidth="1.75" />
-      </svg>
+      <span role="img" aria-label="Wayfinding" style={{ fontSize: "2rem", lineHeight: 1 }}>
+        🗺️
+      </span>
     ),
   },
 ] as const;

@@ -64,7 +64,7 @@ export default function DSHero() {
       }}
     >
       {/* ══════════════════════════════════════════════════════════
-          BACKGROUND — identical pattern to WFHero
+          BACKGROUND - identical pattern to WFHero
           ══════════════════════════════════════════════════════════ */}
       <div
         aria-hidden="true"
@@ -194,23 +194,7 @@ export default function DSHero() {
           }}
         />
 
-        {/* Layer 4: Corner frame markers */}
-        <div style={{ position: "absolute", top: 40, left: 40 }}>
-          <div style={{ width: 24, height: 1.5, background: "rgba(74,108,247,0.22)" }} />
-          <div style={{ width: 1.5, height: 24, background: "rgba(74,108,247,0.22)", marginTop: -1.5 }} />
-        </div>
-        <div style={{ position: "absolute", top: 40, right: 40, display: "flex", flexDirection: "column", alignItems: "flex-end" }}>
-          <div style={{ width: 24, height: 1.5, background: "rgba(74,108,247,0.22)" }} />
-          <div style={{ width: 1.5, height: 24, background: "rgba(74,108,247,0.22)", marginTop: -1.5 }} />
-        </div>
-        <div style={{ position: "absolute", bottom: 40, left: 40, display: "flex", flexDirection: "column-reverse" }}>
-          <div style={{ width: 24, height: 1.5, background: "rgba(74,108,247,0.22)" }} />
-          <div style={{ width: 1.5, height: 24, background: "rgba(74,108,247,0.22)", marginBottom: -1.5 }} />
-        </div>
-        <div style={{ position: "absolute", bottom: 40, right: 40, display: "flex", flexDirection: "column-reverse", alignItems: "flex-end" }}>
-          <div style={{ width: 24, height: 1.5, background: "rgba(74,108,247,0.22)" }} />
-          <div style={{ width: 1.5, height: 24, background: "rgba(74,108,247,0.22)", marginBottom: -1.5 }} />
-        </div>
+
 
         {/* Layer 5: Center vignette */}
         <div
@@ -303,7 +287,7 @@ export default function DSHero() {
             }}
           >
             Manage, schedule, and deliver stunning visual content to every
-            screen in your business — from a single, intuitive dashboard.
+            screen in your business - from a single, intuitive dashboard.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -401,7 +385,7 @@ export default function DSHero() {
           >
             <Image
               src="/assets/images/sign_age.jpeg"
-              alt="Bionics Digital Signage — Content Display Dashboard"
+              alt="Bionics Digital Signage - Content Display Dashboard"
               width={1280}
               height={720}
               sizes="(max-width: 768px) 100vw, 1000px"

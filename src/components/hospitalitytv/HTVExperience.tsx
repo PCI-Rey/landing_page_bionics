@@ -45,7 +45,7 @@ const EXPERIENCES = [
     label: "Welcome",
     title: "Personalized Arrival & Greeting",
     description:
-      "The moment a guest enters their room, they're greeted by name with a custom welcome screen tailored to their stay. Set the tone for a memorable experience from the very first second — with branded messaging, personalized details, and a warm digital introduction that feels truly premium.",
+      "The moment a guest enters their room, they're greeted by name with a custom welcome screen tailored to their stay. Set the tone for a memorable experience from the very first second - with branded messaging, personalized details, and a warm digital introduction that feels truly premium.",
     highlights: [
       "Guest name display",
       "Custom branded messaging",
@@ -62,7 +62,7 @@ const EXPERIENCES = [
     label: "Entertainment",
     title: "On-Screen Playback & Media Access",
     description:
-      "Give guests easy access to movies, live TV channels, on-demand content, and media playback — all from a beautifully designed on-screen interface. Entertainment is organized, easy to navigate, and always responsive to what guests want to watch.",
+      "Give guests easy access to movies, live TV channels, on-demand content, and media playback - all from a beautifully designed on-screen interface. Entertainment is organized, easy to navigate, and always responsive to what guests want to watch.",
     highlights: [
       "Live TV channels",
       "On-demand movies",
@@ -79,7 +79,7 @@ const EXPERIENCES = [
     label: "Music",
     title: "Simple & Enjoyable Room Audio",
     description:
-      "Let guests set the perfect mood in their room with curated music and ambient soundscapes. Whether they want relaxing background music or upbeat energy, in-room audio is always just a tap away — creating a truly immersive stay experience.",
+      "Let guests set the perfect mood in their room with curated music and ambient soundscapes. Whether they want relaxing background music or upbeat energy, in-room audio is always just a tap away - creating a truly immersive stay experience.",
     highlights: [
       "Curated music playlists",
       "Ambient soundscapes",
@@ -96,7 +96,7 @@ const EXPERIENCES = [
     label: "Guide",
     title: "Hotel Facilities & Internal Services",
     description:
-      "Guests can explore everything your hotel offers — from dining and spa to transport, shuttle schedules, and in-room services. All hotel information is presented in a clear, structured format that replaces the traditional printed guide with something far more beautiful and interactive.",
+      "Guests can explore everything your hotel offers - from dining and spa to transport, shuttle schedules, and in-room services. All hotel information is presented in a clear, structured format that replaces the traditional printed guide with something far more beautiful and interactive.",
     highlights: [
       "Dining & restaurant menus",
       "Transport & shuttle info",
@@ -113,7 +113,7 @@ const EXPERIENCES = [
     label: "Nearby",
     title: "Local Attraction Discovery for Guests",
     description:
-      "Help guests explore the world just outside your hotel. Curated recommendations for local attractions, landmarks, restaurants, and hidden gems give guests the confidence to explore — and the feeling that your hotel truly knows the city they're in.",
+      "Help guests explore the world just outside your hotel. Curated recommendations for local attractions, landmarks, restaurants, and hidden gems give guests the confidence to explore - and the feeling that your hotel truly knows the city they're in.",
     highlights: [
       "Top local attractions",
       "Nearby restaurants",
@@ -241,7 +241,7 @@ export default function HTVExperience() {
                 }}
                 className="htv-experience-block"
               >
-                {/* Number badge + label — left on even, right on odd */}
+                {/* Number badge + label - left on even, right on odd */}
                 <motion.div
                   variants={isEven ? slideRight : slideLeft}
                   style={{ order: isEven ? 2 : 1 }}

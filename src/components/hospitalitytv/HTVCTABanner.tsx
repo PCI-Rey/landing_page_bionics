@@ -175,7 +175,7 @@ export default function HTVCTABanner() {
               <strong style={{ color: "#0D0D0D", fontWeight: 700 }}>
                 Bionics Hospitality TV
               </strong>{" "}
-              — where every guest feels truly at home.
+              - where every guest feels truly at home.
             </motion.p>
 
             {/* CTA Button */}

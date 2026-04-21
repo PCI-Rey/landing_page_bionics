@@ -25,7 +25,7 @@ const TRUST_SIGNALS = [
 
 const WHY_POINTS = [
   "Multi-platform compatibility with all LED & signage brands",
-  "Web-based CMS — manage everything from any device",
+  "Web-based CMS - manage everything from any device",
   "Built-in offline mode keeps content running 24/7",
   "End-to-end support from installation to aftersales",
 ] as const;
@@ -267,7 +267,7 @@ export default function DSContact() {
                   marginBottom: isMobile ? "1.25rem" : "1.75rem",
                 }}
               >
-                We deliver end-to-end digital signage solutions — from
+                We deliver end-to-end digital signage solutions - from
                 consultation and hardware installation to content management
                 and ongoing aftersales support.
               </p>
@@ -527,7 +527,7 @@ export default function DSContact() {
                     </motion.div>
                   </div>
 
-                  {/* Solution selector — pre-selected: Digital Signage */}
+                  {/* Solution selector - pre-selected: Digital Signage */}
                   <motion.div variants={slideUpVariant}>
                     <FormLabel htmlFor="ds-solution" required>
                       Solution

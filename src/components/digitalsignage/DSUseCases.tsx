@@ -5,51 +5,51 @@ import { motion } from "framer-motion";
 /* ── Use Case Data ────────────────────────────────────────── */
 const USE_CASES = [
   {
-    id: "malls",
-    title: "Shopping Malls",
+    id: "retail",
+    title: "Retail & Stores",
     description:
-      "Help shoppers locate stores, dining, restrooms, and parking levels instantly - reducing abandonment and increasing dwell time across every floor.",
-    icon: "🏬",
+      "Drive sales with eye-catching promotions, showcase new arrivals, and create immersive in-store brand experiences.",
+    icon: "🛍️",
     accent: "#00D4AA",
   },
   {
-    id: "hospitals",
-    title: "Hospitals & Clinics",
+    id: "corporate",
+    title: "Corporate Offices",
     description:
-      "Guide patients and visitors to departments, wards, and services with calm, clear navigation that reduces anxiety and staff interruptions.",
-    icon: "🏥",
+      "Keep employees engaged and informed with internal news, company performance metrics, and meeting room schedules.",
+    icon: "🏢",
     accent: "#4A6CF7",
   },
   {
-    id: "offices",
-    title: "Office Buildings",
+    id: "qsr",
+    title: "Restaurants & QSR",
     description:
-      "Impress clients and streamline employee movement with elegant lobby directories and floor-by-floor guidance throughout corporate towers.",
-    icon: "🏢",
+      "Deploy dynamic digital menu boards that automatically update based on time of day, inventory, or active promotions.",
+    icon: "🍔",
     accent: "#8B5CF6",
   },
   {
-    id: "hotels",
-    title: "Hotels & Resorts",
+    id: "hospitality",
+    title: "Hotels & Hospitality",
     description:
-      "Elevate the guest journey from arrival to checkout with branded, multi-language wayfinding integrated seamlessly into the property experience.",
+      "Welcome guests, display event schedules, and promote on-site amenities like spas, dining, and activities.",
     icon: "🏨",
     accent: "#00D4AA",
   },
   {
-    id: "campuses",
-    title: "Campuses & Universities",
+    id: "healthcare",
+    title: "Healthcare Facilities",
     description:
-      "Navigate large academic campuses with building directories, event locations, and dynamic scheduling information accessible at every kiosk.",
-    icon: "🎓",
+      "Reduce perceived wait times with engaging content, display health tips, and guide patients to their appointments.",
+    icon: "🏥",
     accent: "#4A6CF7",
   },
   {
-    id: "public",
-    title: "Public Facilities",
+    id: "transportation",
+    title: "Transportation Hubs",
     description:
-      "Serve diverse populations in airports, transit hubs, and government buildings with inclusive, multilingual, and ADA-compliant wayfinding.",
-    icon: "🏛️",
+      "Display real-time arrival and departure boards, safety announcements, and advertising in airports and train stations.",
+    icon: "✈️",
     accent: "#8B5CF6",
   },
 ] as const;
@@ -82,13 +82,13 @@ const cardVariants = {
 };
 
 /* ════════════════════════════════════════════════════════════
-   WF USE CASES
+   DS USE CASES
    ════════════════════════════════════════════════════════════ */
-export default function WFUseCases() {
+export default function DSUseCases() {
   return (
     <section
-      id="wf-use-cases"
-      aria-labelledby="wf-usecases-heading"
+      id="ds-use-cases"
+      aria-labelledby="ds-usecases-heading"
       style={{
         backgroundColor: "#F8FAFF",
         paddingTop: "6rem",
@@ -118,11 +118,11 @@ export default function WFUseCases() {
               marginBottom: "1.25rem",
             }}
           >
-            Built for Every Space
+            Any Industry, Any Screen
           </span>
 
           <h2
-            id="wf-usecases-heading"
+            id="ds-usecases-heading"
             style={{
               fontSize: "clamp(1.75rem, 4vw, 2.75rem)",
               fontWeight: 800,
@@ -132,7 +132,7 @@ export default function WFUseCases() {
               marginBottom: "1.25rem",
             }}
           >
-            Crafted for{" "}
+            Digital Signage for{" "}
             <span
               style={{
                 background: "linear-gradient(135deg, #00D4AA, #4A6CF7, #8B5CF6)",
@@ -141,7 +141,7 @@ export default function WFUseCases() {
                 backgroundClip: "text",
               }}
             >
-              High-Expectation Environments
+              Every Environment
             </span>
           </h2>
 
@@ -154,8 +154,7 @@ export default function WFUseCases() {
               marginInline: "auto",
             }}
           >
-            From luxury retail to life-critical healthcare - Bionics Wayfinding
-            adapts to any environment where visitor confidence matters.
+            Versatile enough to power a single cafe menu board or a global corporate network of thousands of screens.
           </p>
         </motion.div>
 
