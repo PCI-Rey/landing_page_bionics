@@ -14,10 +14,11 @@ const PRODUCTS = [
     highlighted: false,
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#4A6CF7" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-        <rect x="2" y="3" width="20" height="14" rx="2" />
-        <path d="M8 21h8" /><path d="M12 17v4" />
-        <path d="M6 8h.01" /><path d="M10 8h8" />
-        <path d="M6 12h.01" /><path d="M10 12h5" />
+        {/* Wide display screen — public signage feel */}
+        <rect x="1" y="5" width="22" height="13" rx="2" />
+        <path d="M5 19v1" /><path d="M19 19v1" />
+        <path d="M5 20h14" />
+        <path d="M8 9h8" /><path d="M8 12h5" />
       </svg>
     ),
   },
@@ -30,9 +31,10 @@ const PRODUCTS = [
     highlighted: true,
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#4A6CF7" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        {/* TV with star — premium hotel feel */}
         <rect x="2" y="4" width="20" height="13" rx="2" />
-        <path d="M7 21h10" /><path d="M9 17v4" /><path d="M15 17v4" />
-        <polygon points="10,8 10,14 15,11" fill="#4A6CF7" stroke="none" />
+        <path d="M7 21h10" /><path d="M12 17v4" />
+        <path d="M12 7.5l.93 2.87h3.02l-2.44 1.77.93 2.87L12 13.24l-2.44 1.77.93-2.87-2.44-1.77h3.02z" fill="#4A6CF7" stroke="none" />
       </svg>
     ),
   },
@@ -45,9 +47,10 @@ const PRODUCTS = [
     highlighted: false,
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#4A6CF7" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" />
-        <circle cx="12" cy="9" r="2.5" />
-        <path d="M18 20h4" /><path d="M20 18v4" />
+        {/* Compass — navigation/wayfinding feel */}
+        <circle cx="12" cy="12" r="10" />
+        <polygon points="12,3 14.5,9.5 12,12 9.5,9.5" fill="#4A6CF7" stroke="none" />
+        <polygon points="12,21 9.5,14.5 12,12 14.5,14.5" fill="none" stroke="#4A6CF7" strokeWidth="1.75" />
       </svg>
     ),
   },

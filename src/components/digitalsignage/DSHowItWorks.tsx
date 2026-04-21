@@ -84,7 +84,7 @@ export default function DSHowItWorks() {
       id="ds-how-it-works"
       aria-labelledby="ds-hiw-heading"
       style={{
-        backgroundColor: "#FFFFFF",
+        backgroundColor: "#F8FAFF",
         paddingTop: "6rem",
         paddingBottom: "6rem",
         position: "relative",

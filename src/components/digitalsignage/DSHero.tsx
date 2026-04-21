@@ -79,32 +79,97 @@ export default function DSHero() {
         overflow: "hidden",
       }}
     >
-      {/* ── Dot Grid Background ────────────────────────────── */}
+      {/* ══ Background — Vivid animated blobs (visible on white) ══ */}
       <div
         aria-hidden="true"
         style={{
           position: "absolute",
           inset: 0,
-          backgroundImage:
-            "radial-gradient(#F0F0F0 1px, transparent 1px)",
-          backgroundSize: "40px 40px",
-          pointerEvents: "none",
           zIndex: 0,
+          pointerEvents: "none",
+          overflow: "hidden",
         }}
-      />
+      >
+        {/* Blob 1 — Top Left: Cyan */}
+        <motion.div
+          style={{
+            position: "absolute",
+            top: "-20%",
+            left: "-15%",
+            width: 700,
+            height: 700,
+            background: "radial-gradient(circle, rgba(0,212,170,0.55) 0%, rgba(0,212,170,0.15) 50%, transparent 75%)",
+            filter: "blur(40px)",
+            borderRadius: "50%",
+            mixBlendMode: "multiply",
+            willChange: "transform",
+          }}
+          animate={{
+            x: [0, 80, 20, -40, 0],
+            y: [0, 40, 80, 20, 0],
+            scale: [1, 1.1, 0.95, 1.05, 1],
+          }}
+          transition={{
+            repeat: Infinity,
+            duration: 12,
+            ease: "easeInOut",
+          }}
+        />
 
-      {/* ── Subtle radial fade overlay ─────────────────────── */}
-      <div
-        aria-hidden="true"
-        style={{
-          position: "absolute",
-          inset: 0,
-          background:
-            "radial-gradient(ellipse 80% 60% at 50% 0%, rgba(255,255,255,0) 0%, #FFFFFF 75%)",
-          pointerEvents: "none",
-          zIndex: 0,
-        }}
-      />
+        {/* Blob 2 — Bottom Right: Purple */}
+        <motion.div
+          style={{
+            position: "absolute",
+            bottom: "-20%",
+            right: "-15%",
+            width: 650,
+            height: 650,
+            background: "radial-gradient(circle, rgba(139,92,246,0.50) 0%, rgba(74,108,247,0.20) 50%, transparent 75%)",
+            filter: "blur(40px)",
+            borderRadius: "50%",
+            mixBlendMode: "multiply",
+            willChange: "transform",
+          }}
+          animate={{
+            x: [0, -70, -20, 50, 0],
+            y: [0, -50, -80, -30, 0],
+            scale: [1, 0.92, 1.08, 0.96, 1],
+          }}
+          transition={{
+            repeat: Infinity,
+            duration: 14,
+            delay: 2,
+            ease: "easeInOut",
+          }}
+        />
+
+        {/* Blob 3 — Center: Blue drifting */}
+        <motion.div
+          style={{
+            position: "absolute",
+            top: "20%",
+            left: "30%",
+            width: 500,
+            height: 500,
+            background: "radial-gradient(circle, rgba(74,108,247,0.40) 0%, rgba(74,108,247,0.12) 50%, transparent 75%)",
+            filter: "blur(35px)",
+            borderRadius: "50%",
+            mixBlendMode: "multiply",
+            willChange: "transform",
+          }}
+          animate={{
+            x: [0, 60, -50, 30, 0],
+            y: [0, -60, 40, -30, 0],
+            scale: [1, 1.12, 0.90, 1.06, 1],
+          }}
+          transition={{
+            repeat: Infinity,
+            duration: 10,
+            delay: 4,
+            ease: "easeInOut",
+          }}
+        />
+      </div>
 
       <div
         className="container-bionics"
@@ -274,111 +339,173 @@ export default function DSHero() {
           </motion.div>
         </motion.div>
 
-        {/* ── Product Images ───────────────────────────────── */}
+        {/* ── Premium Single Image Showcase ──────────────── */}
         <motion.div
           variants={imageContainerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
           style={{
-            display: "flex",
-            flexDirection: isMobile ? "column" : "row",
-            gap: "1.25rem",
-            alignItems: isMobile ? "stretch" : "flex-end",
-            maxWidth: 1100,
+            position: "relative",
+            maxWidth: 1000,
             margin: "0 auto",
           }}
         >
-          {/* Image 1 — Left */}
+          {/* Floating Stat — Top Left */}
           <motion.div
             variants={imageItemVariants}
-            whileHover={{ scale: 1.02 }}
-            transition={{ duration: 0.3 }}
             style={{
-              flex: isMobile ? "1 1 auto" : "1 1 33%",
-              borderRadius: 20,
-              overflow: "hidden",
-              boxShadow: "0 8px 40px rgba(0,0,0,0.10)",
-              willChange: "transform",
+              position: "absolute",
+              top: isMobile ? -16 : -24,
+              left: isMobile ? 12 : -32,
+              zIndex: 3,
+              background: "rgba(255,255,255,0.95)",
+              backdropFilter: "blur(12px)",
+              border: "1px solid #E8EDF5",
+              borderRadius: 16,
+              padding: "0.75rem 1.25rem",
+              boxShadow: "0 8px 32px rgba(0,0,0,0.10)",
+              display: "flex",
+              alignItems: "center",
+              gap: "0.625rem",
+              whiteSpace: "nowrap",
             }}
           >
-            <Image
-              src="/assets/images/sign_age_1.jpeg"
-              alt="Bionics Digital Signage — display in action"
-              width={640}
-              height={360}
-              sizes="(max-width: 768px) 100vw, 33vw"
-              style={{
-                width: "100%",
-                height: "auto",
-                aspectRatio: "16/9",
-                objectFit: "cover",
-                display: "block",
-              }}
-              priority
-            />
+            <span style={{ fontSize: "1.25rem", lineHeight: 1 }}>🖥️</span>
+            <div>
+              <p style={{ fontSize: "0.75rem", color: "#9CA3AF", margin: 0, fontWeight: 500 }}>Screens Managed</p>
+              <p style={{ fontSize: "1rem", color: "#0D0D0D", margin: 0, fontWeight: 700 }}>500+</p>
+            </div>
           </motion.div>
 
-          {/* Image 2 — Middle (elevated on desktop) */}
+          {/* Floating Stat — Top Right */}
           <motion.div
             variants={imageItemVariants}
-            whileHover={{ scale: 1.02 }}
-            transition={{ duration: 0.3 }}
             style={{
-              flex: isMobile ? "1 1 auto" : "1 1 33%",
-              borderRadius: 20,
-              overflow: "hidden",
+              position: "absolute",
+              top: isMobile ? -16 : -24,
+              right: isMobile ? 12 : -32,
+              zIndex: 3,
+              background: "rgba(255,255,255,0.95)",
+              backdropFilter: "blur(12px)",
+              border: "1px solid #E8EDF5",
+              borderRadius: 16,
+              padding: "0.75rem 1.25rem",
+              boxShadow: "0 8px 32px rgba(0,0,0,0.10)",
+              display: "flex",
+              alignItems: "center",
+              gap: "0.625rem",
+              whiteSpace: "nowrap",
+            }}
+          >
+            <span style={{ fontSize: "1.25rem", lineHeight: 1 }}>⚡</span>
+            <div>
+              <p style={{ fontSize: "0.75rem", color: "#9CA3AF", margin: 0, fontWeight: 500 }}>Uptime</p>
+              <p style={{ fontSize: "1rem", color: "#0D0D0D", margin: 0, fontWeight: 700 }}>99.9%</p>
+            </div>
+          </motion.div>
+
+          {/* Gradient border frame */}
+          <motion.div
+            variants={imageItemVariants}
+            style={{
+              position: "relative",
+              padding: 3,
+              borderRadius: 24,
+              background: "linear-gradient(135deg, #00D4AA, #4A6CF7, #8B5CF6)",
               boxShadow:
-                "0 16px 64px rgba(74,108,247,0.18), 0 4px 24px rgba(0,0,0,0.08)",
-              transform: isMobile ? "none" : "translateY(-20px)",
-              willChange: "transform",
+                "0 24px 80px rgba(74,108,247,0.22), 0 8px 32px rgba(0,0,0,0.10)",
             }}
           >
-            <Image
-              src="/assets/images/sign_age_2.jpeg"
-              alt="Bionics Digital Signage — content management"
-              width={640}
-              height={360}
-              sizes="(max-width: 768px) 100vw, 33vw"
+            {/* Glow ring behind image */}
+            <div
+              aria-hidden="true"
               style={{
-                width: "100%",
-                height: "auto",
-                aspectRatio: "16/9",
-                objectFit: "cover",
-                display: "block",
+                position: "absolute",
+                inset: -20,
+                borderRadius: 36,
+                background:
+                  "radial-gradient(ellipse at center, rgba(74,108,247,0.12) 0%, transparent 70%)",
+                zIndex: -1,
+                filter: "blur(20px)",
               }}
-              priority
             />
+
+            {/* Image wrapper */}
+            <div style={{ borderRadius: 22, overflow: "hidden", position: "relative" }}>
+              <Image
+                src="/assets/images/sign_age.jpeg"
+                alt="Bionics Digital Signage — display in action"
+                width={1200}
+                height={675}
+                sizes="(max-width: 768px) 100vw, 1000px"
+                style={{
+                  width: "100%",
+                  height: "auto",
+                  aspectRatio: "16/9",
+                  objectFit: "cover",
+                  display: "block",
+                }}
+                priority
+              />
+
+              {/* Glass info bar overlaid at bottom */}
+              <div
+                style={{
+                  position: "absolute",
+                  bottom: 0,
+                  left: 0,
+                  right: 0,
+                  background:
+                    "linear-gradient(0deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.15) 60%, transparent 100%)",
+                  padding: isMobile ? "1.5rem 1.25rem 1.25rem" : "2rem 2rem 1.5rem",
+                  display: "flex",
+                  alignItems: "flex-end",
+                  justifyContent: "space-between",
+                  flexWrap: "wrap",
+                  gap: "0.75rem",
+                }}
+              >
+                <div>
+                  <p style={{ color: "#FFFFFF", fontSize: isMobile ? "0.9rem" : "1.0625rem", fontWeight: 600, margin: 0 }}>
+                    Real-time Content Management Dashboard
+                  </p>
+                </div>
+
+              </div>
+            </div>
           </motion.div>
 
-          {/* Image 3 — Right */}
+          {/* Bottom floating pill stats */}
           <motion.div
             variants={imageItemVariants}
-            whileHover={{ scale: 1.02 }}
-            transition={{ duration: 0.3 }}
             style={{
-              flex: isMobile ? "1 1 auto" : "1 1 33%",
-              borderRadius: 20,
-              overflow: "hidden",
-              boxShadow: "0 8px 40px rgba(0,0,0,0.10)",
-              willChange: "transform",
+              display: "flex",
+              justifyContent: "center",
+              gap: isMobile ? "0.75rem" : "1.5rem",
+              marginTop: "2rem",
+              flexWrap: "wrap",
             }}
           >
-            <Image
-              src="/assets/images/sign_age_3.jpeg"
-              alt="Bionics Digital Signage — multi-screen layout"
-              width={640}
-              height={360}
-              sizes="(max-width: 768px) 100vw, 33vw"
-              style={{
-                width: "100%",
-                height: "auto",
-                aspectRatio: "16/9",
-                objectFit: "cover",
-                display: "block",
-              }}
-              priority
-            />
+            {[
+              { label: "Content Types", value: "50+" },
+              { label: "Avg. Setup Time", value: "< 5 min" },
+              { label: "Formats Supported", value: "All Major" },
+            ].map((stat) => (
+              <div
+                key={stat.label}
+                style={{
+                  background: "rgba(248,250,255,0.9)",
+                  border: "1px solid #E8EDF5",
+                  borderRadius: 12,
+                  padding: "0.625rem 1.25rem",
+                  textAlign: "center",
+                }}
+              >
+                <p style={{ fontSize: "1rem", fontWeight: 700, color: "#0D0D0D", margin: 0 }}>{stat.value}</p>
+                <p style={{ fontSize: "0.75rem", color: "#9CA3AF", fontWeight: 500, margin: 0 }}>{stat.label}</p>
+              </div>
+            ))}
           </motion.div>
         </motion.div>
       </div>

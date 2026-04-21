@@ -64,7 +64,7 @@ export default function RootLayout({
           flexDirection: "column",
           backgroundColor: "#FFFFFF",
           color: "#4B5563",
-          fontFamily: "var(--font-plus-jakarta), 'Plus Jakarta Sans', system-ui, sans-serif",
+          fontFamily: "var(--font-outfit), 'Outfit', system-ui, sans-serif",
         }}
       >
         <ClearCache />

@@ -85,7 +85,7 @@ export default function DSWorkflow() {
       id="ds-workflow"
       aria-labelledby="ds-workflow-heading"
       style={{
-        backgroundColor: "#F8FAFF",
+        backgroundColor: "#FFFFFF",
         paddingTop: "6rem",
         paddingBottom: "6rem",
         position: "relative",

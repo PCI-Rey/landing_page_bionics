@@ -81,7 +81,7 @@ export default function DSFAQ() {
       id="ds-faq"
       aria-labelledby="ds-faq-heading"
       style={{
-        backgroundColor: "#F8FAFF",
+        backgroundColor: "#FFFFFF",
         paddingTop: "6rem",
         paddingBottom: "6rem",
         position: "relative",

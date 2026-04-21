@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
-import Navbar from "@/components/sections/Navbar";
+import NavbarProduct from "@/components/sections/NavbarProduct";
 import Footer from "@/components/sections/Footer";
 import DSHero from "@/components/digitalsignage/DSHero";
 import DSFeatures from "@/components/digitalsignage/DSFeatures";
-import DSGallery from "@/components/digitalsignage/DSGallery";
 import DSWorkflow from "@/components/digitalsignage/DSWorkflow";
 import DSHowItWorks from "@/components/digitalsignage/DSHowItWorks";
 import DSFAQ from "@/components/digitalsignage/DSFAQ";
@@ -47,7 +46,7 @@ export const metadata: Metadata = {
 export default function DigitalSignagePage() {
   return (
     <>
-      <Navbar />
+      <NavbarProduct />
       <main
         id="main-content"
         style={{
@@ -58,7 +57,6 @@ export default function DigitalSignagePage() {
       >
         <DSHero />
         <DSFeatures />
-        <DSGallery />
         <DSWorkflow />
         <DSHowItWorks />
         <DSFAQ />
