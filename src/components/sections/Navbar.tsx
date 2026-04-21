@@ -39,10 +39,10 @@ export default function Navbar() {
   const handleMobileClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
     setMobileMenuOpen(false);
-    
+
     // Unlock body scroll immediately so the page can scroll
     document.body.style.overflow = "";
-    
+
     // Allow the menu close animation to begin before scrolling
     setTimeout(() => {
       if (href.startsWith("#")) {
@@ -88,7 +88,7 @@ export default function Navbar() {
       >
         {/* ── Logo ──────────────────────────────────────── */}
         <a
-          href="#"
+          href="/"
           aria-label="Bionics home"
           style={{ display: "flex", alignItems: "center", gap: "0.875rem", textDecoration: "none" }}
         >

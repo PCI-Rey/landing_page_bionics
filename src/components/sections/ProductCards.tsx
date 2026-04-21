@@ -204,7 +204,8 @@ type Product = typeof PRODUCTS[number];
 
 function ProductCard({ product, isMobile }: { product: Product; isMobile: boolean }) {
   return (
-    <motion.div
+    <motion.a
+      href={product.id === "digital-signage" ? "/digital-signage" : `#${product.id}`}
       variants={cardVariants}
       whileHover={isMobile ? undefined : { scale: 1.02 }}
       transition={{ duration: 0.3 }}
@@ -219,17 +220,19 @@ function ProductCard({ product, isMobile }: { product: Product; isMobile: boolea
         backgroundColor: "#FFFFFF",
         border: "1px solid #E8EDF5",
         boxShadow: "0 4px 24px rgba(0,0,0,0.04)",
-        transition: "box-shadow 0.3s ease, border-color 0.3s ease",
+        transition: "box-shadow 0.3s ease, border-color 0.3s ease, transform 0.3s ease",
+        textDecoration: "none",
+        cursor: "pointer",
       }}
       onMouseEnter={(e) => {
         if (isMobile) return;
-        const el = e.currentTarget as HTMLDivElement;
+        const el = e.currentTarget as HTMLAnchorElement;
         el.style.boxShadow = "0 8px 40px rgba(74,108,247,0.12)";
         el.style.borderColor = "rgba(74,108,247,0.3)";
       }}
       onMouseLeave={(e) => {
         if (isMobile) return;
-        const el = e.currentTarget as HTMLDivElement;
+        const el = e.currentTarget as HTMLAnchorElement;
         el.style.boxShadow = "0 4px 24px rgba(0,0,0,0.04)";
         el.style.borderColor = "#E8EDF5";
       }}
@@ -331,40 +334,35 @@ function ProductCard({ product, isMobile }: { product: Product; isMobile: boolea
         </ul>
       </div>
 
-      {/* Bottom Section: Learn More link */}
-      <div>
-        <a
-          href={`#${product.id}`}
-          style={{
-            display: "inline-flex",
-            alignItems: "center",
-            gap: "0.5rem",
-            fontSize: "1rem",
-            fontWeight: 700,
-            textDecoration: "none",
-            background: "linear-gradient(135deg, #00D4AA, #4A6CF7)",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-            backgroundClip: "text",
+      {/* Bottom Section: Learn More link (Visual only) */}
+      <div
+        style={{
+          display: "inline-flex",
+          alignItems: "center",
+          gap: "0.5rem",
+          fontSize: "1rem",
+          fontWeight: 700,
+          background: "linear-gradient(135deg, #00D4AA, #4A6CF7)",
+          WebkitBackgroundClip: "text",
+          WebkitTextFillColor: "transparent",
+          backgroundClip: "text",
+        }}
+      >
+        Learn More
+        <svg
+          width="18" height="18" viewBox="0 0 24 24" fill="none"
+          stroke="#4A6CF7" strokeWidth="2.5"
+          strokeLinecap="round" strokeLinejoin="round"
+          aria-hidden="true"
+          style={{ 
+            transition: "transform 0.3s ease", 
+            flexShrink: 0,
           }}
-          className="group-hover-arrow"
         >
-          Learn More
-          <svg
-            width="18" height="18" viewBox="0 0 24 24" fill="none"
-            stroke="#4A6CF7" strokeWidth="2.5"
-            strokeLinecap="round" strokeLinejoin="round"
-            aria-hidden="true"
-            style={{ 
-              transition: "transform 0.3s ease", 
-              flexShrink: 0,
-            }}
-          >
-            <path d="M5 12h14" />
-            <path d="m12 5 7 7-7 7" />
-          </svg>
-        </a>
+          <path d="M5 12h14" />
+          <path d="m12 5 7 7-7 7" />
+        </svg>
       </div>
-    </motion.div>
+    </motion.a>
   );
 }
