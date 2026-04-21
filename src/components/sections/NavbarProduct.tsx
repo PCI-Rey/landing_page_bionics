@@ -148,23 +148,8 @@ export default function NavbarProduct() {
           ))}
         </div>
 
-        {/* ── CTA + Mobile Toggle ────────────────────────── */}
+        {/* ── Mobile Toggle ───────────────────────────────── */}
         <div style={{ display: "flex", alignItems: "center", gap: "1.25rem" }}>
-          {/* Desktop CTA */}
-          <div className="desktop-only">
-            <a
-              href="#contact"
-              className="gradient-btn"
-              style={{
-                padding: "0.6rem 1.5rem",
-                fontSize: "0.875rem",
-                borderRadius: 999,
-              }}
-            >
-              Schedule a Demo
-              <ArrowIcon />
-            </a>
-          </div>
 
           {/* Mobile hamburger */}
           <button
@@ -275,22 +260,7 @@ export default function NavbarProduct() {
                 </a>
               ))}
 
-              <div style={{ marginTop: "1rem" }}>
-                <a
-                  href="#contact"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="gradient-btn"
-                  style={{
-                    display: "flex",
-                    justifyContent: "center",
-                    padding: "1rem",
-                    borderRadius: 12,
-                    fontSize: "1rem",
-                  }}
-                >
-                  Schedule a Demo
-                </a>
-              </div>
+
             </div>
           </motion.div>
         )}
@@ -362,21 +332,4 @@ function NavLink({
   );
 }
 
-function ArrowIcon() {
-  return (
-    <svg
-      width="15"
-      height="15"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-    >
-      <path d="M5 12h14" />
-      <path d="m12 5 7 7-7 7" />
-    </svg>
-  );
-}
+

@@ -235,6 +235,48 @@ img, svg, video {
   transform: translateY(0);
 }
 
+/* ── Product Cards Grid (SSR-safe responsive) ────────────── */
+.product-cards-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr;
+  align-items: stretch;
+}
+@media (min-width: 640px) {
+  .product-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+@media (min-width: 1024px) {
+  .product-cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+  }
+}
+
+/* ── Hero Button Group (SSR-safe responsive) ─────────────── */
+.hero-btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+@media (max-width: 639px) {
+  .hero-btn-group {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .hero-btn-group .gradient-btn,
+  .hero-btn-group a {
+    width: 100%;
+    max-width: 320px;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
 /* ── Outline Button ──────────────────────────────────────── */
 .outline-btn {
   display: inline-flex;

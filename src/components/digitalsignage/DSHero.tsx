@@ -319,13 +319,8 @@ export default function DSHero() {
           {/* CTA Buttons */}
           <motion.div
             variants={itemVariants}
-            style={{
-              display: "flex",
-              flexWrap: "wrap",
-              gap: "1rem",
-              justifyContent: "center",
-              marginBottom: "3rem",
-            }}
+            className="hero-btn-group"
+            style={{ marginBottom: "3rem" }}
           >
             {/* Primary — gradient */}
             <a

@@ -113,6 +113,7 @@ export default function ProductCards() {
         paddingTop: isMobile ? "3.5rem" : "6rem",
         paddingBottom: isMobile ? "4rem" : "8rem",
         overflow: "hidden",
+        overflowX: "hidden",
       }}
     >
       <div className="container-bionics" style={{ position: "relative", zIndex: 10 }}>
@@ -182,16 +183,7 @@ export default function ProductCards() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
-          style={{
-            display: "grid",
-            gridTemplateColumns: isMobile
-              ? "1fr"
-              : isTablet
-                ? "repeat(2, 1fr)"
-                : "repeat(3, 1fr)",
-            gap: isMobile ? "1.5rem" : "2.5rem",
-            alignItems: "stretch",
-          }}
+          className="product-cards-grid"
         >
           {PRODUCTS.map((product) => (
             <ProductCard key={product.id} product={product} isMobile={isMobile} />

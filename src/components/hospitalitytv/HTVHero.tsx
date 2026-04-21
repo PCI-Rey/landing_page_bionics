@@ -318,13 +318,8 @@ export default function HTVHero() {
           {/* CTA Buttons */}
           <motion.div
             variants={itemVariants}
-            style={{
-              display: "flex",
-              flexWrap: "wrap",
-              gap: "1rem",
-              justifyContent: "center",
-              marginBottom: "2rem",
-            }}
+            className="hero-btn-group"
+            style={{ marginBottom: "2rem" }}
           >
             <a
               href="#htv-contact"
