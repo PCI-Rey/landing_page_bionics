@@ -169,6 +169,75 @@ export default function DSHero() {
             ease: "easeInOut",
           }}
         />
+
+        {/* ── Added: Scrolling grid (backgroundPosition — no overflow) ── */}
+        <motion.div
+          animate={{ backgroundPosition: ["0px 0px", "0px 48px"] }}
+          transition={{ repeat: Infinity, duration: 3, ease: "linear" }}
+          style={{
+            position: "absolute",
+            inset: "-48px 0 0 0",
+            backgroundImage: `
+              linear-gradient(to right,  rgba(74,108,247,0.07) 1px, transparent 1px),
+              linear-gradient(to bottom, rgba(74,108,247,0.07) 1px, transparent 1px)
+            `,
+            backgroundSize: "48px 48px",
+            maskImage:
+              "radial-gradient(ellipse 88% 85% at 50% 42%, rgba(0,0,0,1) 0%, transparent 100%)",
+            WebkitMaskImage:
+              "radial-gradient(ellipse 88% 85% at 50% 42%, rgba(0,0,0,1) 0%, transparent 100%)",
+          }}
+        />
+
+        {/* ── Added: Glowing intersection dots ─────────────────── */}
+        <motion.div
+          animate={{ opacity: [0.3, 0.9, 0.3], scale: [1, 1.5, 1] }}
+          transition={{ repeat: Infinity, duration: 3.5, ease: "easeInOut" }}
+          style={{ position: "absolute", top: "22%", left: "14%", width: 6, height: 6, borderRadius: "50%", background: "#00D4AA", boxShadow: "0 0 10px rgba(0,212,170,0.65)" }}
+        />
+        <motion.div
+          animate={{ opacity: [0.2, 0.8, 0.2], scale: [1, 1.4, 1] }}
+          transition={{ repeat: Infinity, duration: 4.5, ease: "easeInOut", delay: 0.8 }}
+          style={{ position: "absolute", top: "18%", right: "18%", width: 6, height: 6, borderRadius: "50%", background: "#4A6CF7", boxShadow: "0 0 10px rgba(74,108,247,0.65)" }}
+        />
+        <motion.div
+          animate={{ opacity: [0.25, 0.85, 0.25], scale: [1, 1.6, 1] }}
+          transition={{ repeat: Infinity, duration: 5, ease: "easeInOut", delay: 1.6 }}
+          style={{ position: "absolute", top: "55%", left: "22%", width: 7, height: 7, borderRadius: "50%", background: "#8B5CF6", boxShadow: "0 0 12px rgba(139,92,246,0.60)" }}
+        />
+        <motion.div
+          animate={{ opacity: [0.3, 0.9, 0.3], scale: [1, 1.4, 1] }}
+          transition={{ repeat: Infinity, duration: 4, ease: "easeInOut", delay: 2.4 }}
+          style={{ position: "absolute", top: "60%", right: "24%", width: 5, height: 5, borderRadius: "50%", background: "#00D4AA", boxShadow: "0 0 8px rgba(0,212,170,0.60)" }}
+        />
+
+        {/* ── Added: Corner frame markers ───────────────────────── */}
+        <div style={{ position: "absolute", top: 40, left: 40 }}>
+          <div style={{ width: 24, height: 1.5, background: "rgba(74,108,247,0.22)" }} />
+          <div style={{ width: 1.5, height: 24, background: "rgba(74,108,247,0.22)", marginTop: -1.5 }} />
+        </div>
+        <div style={{ position: "absolute", top: 40, right: 40, display: "flex", flexDirection: "column", alignItems: "flex-end" }}>
+          <div style={{ width: 24, height: 1.5, background: "rgba(74,108,247,0.22)" }} />
+          <div style={{ width: 1.5, height: 24, background: "rgba(74,108,247,0.22)", marginTop: -1.5 }} />
+        </div>
+        <div style={{ position: "absolute", bottom: 40, left: 40, display: "flex", flexDirection: "column-reverse" }}>
+          <div style={{ width: 24, height: 1.5, background: "rgba(74,108,247,0.22)" }} />
+          <div style={{ width: 1.5, height: 24, background: "rgba(74,108,247,0.22)", marginBottom: -1.5 }} />
+        </div>
+        <div style={{ position: "absolute", bottom: 40, right: 40, display: "flex", flexDirection: "column-reverse", alignItems: "flex-end" }}>
+          <div style={{ width: 24, height: 1.5, background: "rgba(74,108,247,0.22)" }} />
+          <div style={{ width: 1.5, height: 24, background: "rgba(74,108,247,0.22)", marginBottom: -1.5 }} />
+        </div>
+
+        {/* ── Added: Center vignette — keeps headline readable ─── */}
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            background:
+              "radial-gradient(ellipse 62% 55% at 50% 40%, rgba(255,255,255,0.68) 0%, transparent 100%)",
+          }}
+        />
       </div>
 
       <div

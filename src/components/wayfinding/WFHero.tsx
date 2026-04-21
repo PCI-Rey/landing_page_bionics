@@ -63,178 +63,170 @@ export default function WFHero() {
         overflow: "hidden",
       }}
     >
-      {/* ══ Premium Animated Hero Background ════════════════════ */}
+      {/* ══════════════════════════════════════════════════════════
+          BACKGROUND — identical pattern to landing page Hero
+          Uses backgroundPosition scroll (no translateY overflow).
+          ══════════════════════════════════════════════════════════ */}
       <div
         aria-hidden="true"
-        style={{
-          position: "absolute",
-          inset: 0,
-          zIndex: 0,
-          pointerEvents: "none",
-          overflow: "hidden",
-        }}
+        style={{ position: "absolute", inset: 0, zIndex: 0, pointerEvents: "none" }}
       >
-        {/* ── Layer 1: Fine architectural grid (static base) ── */}
-        <div
+        {/* Layer 1: Scrolling grid via backgroundPosition — never overflows */}
+        <motion.div
+          animate={{ backgroundPosition: ["0px 0px", "0px 48px"] }}
+          transition={{ repeat: Infinity, duration: 3, ease: "linear" }}
           style={{
             position: "absolute",
-            inset: 0,
+            inset: "-48px 0 0 0",
             backgroundImage: `
-              linear-gradient(to right,  rgba(74,108,247,0.07) 1px, transparent 1px),
-              linear-gradient(to bottom, rgba(74,108,247,0.07) 1px, transparent 1px)
+              linear-gradient(to right,  rgba(74,108,247,0.08) 1px, transparent 1px),
+              linear-gradient(to bottom, rgba(74,108,247,0.08) 1px, transparent 1px)
             `,
-            backgroundSize: "40px 40px",
+            backgroundSize: "48px 48px",
             maskImage:
-              "radial-gradient(ellipse 95% 90% at 50% 40%, rgba(0,0,0,1) 0%, transparent 100%)",
+              "radial-gradient(ellipse 88% 85% at 50% 42%, rgba(0,0,0,1) 0%, transparent 100%)",
             WebkitMaskImage:
-              "radial-gradient(ellipse 95% 90% at 50% 40%, rgba(0,0,0,1) 0%, transparent 100%)",
+              "radial-gradient(ellipse 88% 85% at 50% 42%, rgba(0,0,0,1) 0%, transparent 100%)",
           }}
         />
 
-        {/* ── Layer 2: Ambient orbs — large, clearly drifting ── */}
-
-        {/* Orb A — Cyan, top-left, drifts right-down */}
+        {/* Layer 2: Soft glow blobs — small drift (±40px max), fully contained */}
         <motion.div
-          animate={{ x: [0, 200, 80, -60, 0], y: [0, 100, 220, 70, 0] }}
+          animate={{ x: [0, 40, -30, 0], y: [0, -40, 30, 0], scale: [1, 1.06, 0.96, 1] }}
+          transition={{ repeat: Infinity, duration: 15, ease: "easeInOut" }}
+          style={{
+            position: "absolute",
+            left: "-10%",
+            top: "-10%",
+            width: 600,
+            height: 600,
+            background: "radial-gradient(circle, rgba(0,212,170,0.10) 0%, transparent 70%)",
+            filter: "blur(80px)",
+            borderRadius: "50%",
+            willChange: "transform",
+          }}
+        />
+        <motion.div
+          animate={{ x: [0, -40, 30, 0], y: [0, 40, -30, 0], scale: [1, 1.05, 0.94, 1] }}
           transition={{ repeat: Infinity, duration: 18, ease: "easeInOut" }}
           style={{
             position: "absolute",
-            top: "-30%",
-            left: "-10%",
-            width: 900,
-            height: 500,
-            background:
-              "radial-gradient(ellipse, rgba(0,212,170,0.50) 0%, rgba(0,212,170,0.15) 50%, transparent 72%)",
-            filter: "blur(48px)",
-            borderRadius: "60% 40% 55% 45% / 50% 60% 40% 50%",
-            mixBlendMode: "multiply",
+            right: "-5%",
+            top: "-15%",
+            width: 700,
+            height: 700,
+            background: "radial-gradient(circle, rgba(74,108,247,0.09) 0%, transparent 70%)",
+            filter: "blur(90px)",
+            borderRadius: "50%",
             willChange: "transform",
           }}
         />
-
-        {/* Orb B — Indigo, right, drifts left-up */}
         <motion.div
-          animate={{ x: [0, -180, -80, 100, 0], y: [0, -120, -200, -70, 0] }}
-          transition={{ repeat: Infinity, duration: 14, ease: "easeInOut" }}
+          animate={{ x: [0, 30, -20, 0], y: [0, -30, 40, 0], scale: [1, 1.07, 0.95, 1] }}
+          transition={{ repeat: Infinity, duration: 20, ease: "easeInOut" }}
           style={{
             position: "absolute",
-            bottom: "-25%",
-            right: "-12%",
-            width: 860,
-            height: 460,
-            background:
-              "radial-gradient(ellipse, rgba(74,108,247,0.48) 0%, rgba(74,108,247,0.14) 50%, transparent 72%)",
-            filter: "blur(48px)",
-            borderRadius: "45% 55% 40% 60% / 55% 45% 60% 40%",
-            mixBlendMode: "multiply",
+            left: "30%",
+            bottom: "-10%",
+            width: 600,
+            height: 600,
+            background: "radial-gradient(circle, rgba(139,92,246,0.08) 0%, transparent 70%)",
+            filter: "blur(80px)",
+            borderRadius: "50%",
             willChange: "transform",
           }}
         />
 
-        {/* Orb C — Violet, center, orbital slow float */}
+        {/* Layer 3: Glowing grid intersection dots */}
         <motion.div
-          animate={{ x: [0, 120, -90, 50, 0], y: [0, -90, 60, -120, 0] }}
-          transition={{ repeat: Infinity, duration: 22, ease: "easeInOut" }}
+          animate={{ opacity: [0.3, 0.9, 0.3], scale: [1, 1.5, 1] }}
+          transition={{ repeat: Infinity, duration: 3.5, ease: "easeInOut" }}
           style={{
             position: "absolute",
-            top: "10%",
-            left: "20%",
-            width: 780,
-            height: 400,
-            background:
-              "radial-gradient(ellipse, rgba(139,92,246,0.42) 0%, rgba(139,92,246,0.12) 50%, transparent 72%)",
-            filter: "blur(50px)",
-            borderRadius: "50% 50% 65% 35% / 45% 55% 45% 55%",
-            mixBlendMode: "multiply",
-            willChange: "transform",
+            top: "22%",
+            left: "16%",
+            width: 6,
+            height: 6,
+            borderRadius: "50%",
+            background: "#00D4AA",
+            boxShadow: "0 0 10px rgba(0,212,170,0.6)",
           }}
         />
-
-        {/* ── Layer 3: Diagonal route sweep lines ─────────────── */}
-        {/* These travel across the grid, reinforcing the navigation/spatial theme */}
-
-        {/* Sweep 1 — fast, shallow diagonal */}
         <motion.div
-          animate={{ x: ["-120%", "220%"] }}
-          transition={{ repeat: Infinity, duration: 10, ease: "linear", repeatDelay: 1 }}
+          animate={{ opacity: [0.2, 0.8, 0.2], scale: [1, 1.4, 1] }}
+          transition={{ repeat: Infinity, duration: 4.5, ease: "easeInOut", delay: 0.8 }}
           style={{
             position: "absolute",
-            top: "28%",
-            left: 0,
-            width: "55%",
-            height: 2,
-            background:
-              "linear-gradient(90deg, transparent 0%, rgba(0,212,170,0.45) 30%, rgba(74,108,247,0.35) 70%, transparent 100%)",
-            transform: "rotate(-15deg)",
-            filter: "blur(1px)",
-            willChange: "transform",
+            top: "18%",
+            right: "20%",
+            width: 6,
+            height: 6,
+            borderRadius: "50%",
+            background: "#4A6CF7",
+            boxShadow: "0 0 10px rgba(74,108,247,0.6)",
           }}
         />
-
-        {/* Sweep 2 — slower, steeper diagonal, indigo */}
         <motion.div
-          animate={{ x: ["-140%", "240%"] }}
-          transition={{ repeat: Infinity, duration: 14, ease: "linear", repeatDelay: 3 }}
+          animate={{ opacity: [0.25, 0.85, 0.25], scale: [1, 1.6, 1] }}
+          transition={{ repeat: Infinity, duration: 5, ease: "easeInOut", delay: 1.6 }}
           style={{
             position: "absolute",
-            top: "55%",
-            left: 0,
-            width: "65%",
-            height: 1.5,
-            background:
-              "linear-gradient(90deg, transparent 0%, rgba(74,108,247,0.40) 35%, rgba(139,92,246,0.30) 70%, transparent 100%)",
-            transform: "rotate(-22deg)",
-            filter: "blur(0.5px)",
-            willChange: "transform",
+            top: "52%",
+            left: "25%",
+            width: 7,
+            height: 7,
+            borderRadius: "50%",
+            background: "#8B5CF6",
+            boxShadow: "0 0 12px rgba(139,92,246,0.55)",
           }}
         />
-
-        {/* Sweep 3 — medium, gentle upward diagonal */}
         <motion.div
-          animate={{ x: ["-130%", "230%"] }}
-          transition={{ repeat: Infinity, duration: 18, ease: "linear", repeatDelay: 2 }}
+          animate={{ opacity: [0.3, 0.9, 0.3], scale: [1, 1.4, 1] }}
+          transition={{ repeat: Infinity, duration: 4, ease: "easeInOut", delay: 2.2 }}
           style={{
             position: "absolute",
-            top: "70%",
-            left: 0,
-            width: "50%",
-            height: 1,
-            background:
-              "linear-gradient(90deg, transparent 0%, rgba(0,212,170,0.35) 40%, rgba(74,108,247,0.28) 70%, transparent 100%)",
-            transform: "rotate(-8deg)",
-            filter: "blur(0.5px)",
-            willChange: "transform",
+            top: "58%",
+            right: "28%",
+            width: 5,
+            height: 5,
+            borderRadius: "50%",
+            background: "#00D4AA",
+            boxShadow: "0 0 8px rgba(0,212,170,0.55)",
           }}
         />
 
-        {/* ── Layer 4: Soft vertical light band — vertical drift ─ */}
-        <motion.div
-          animate={{ y: ["-60%", "160%"] }}
-          transition={{ repeat: Infinity, duration: 22, ease: "easeInOut" }}
-          style={{
-            position: "absolute",
-            top: 0,
-            left: "38%",
-            width: "24%",
-            height: "70%",
-            background:
-              "linear-gradient(180deg, transparent 0%, rgba(74,108,247,0.10) 30%, rgba(139,92,246,0.08) 70%, transparent 100%)",
-            filter: "blur(30px)",
-            willChange: "transform",
-          }}
-        />
+        {/* Layer 4: Corner frame markers */}
+        <div style={{ position: "absolute", top: 40, left: 40 }}>
+          <div style={{ width: 24, height: 1.5, background: "rgba(74,108,247,0.22)" }} />
+          <div style={{ width: 1.5, height: 24, background: "rgba(74,108,247,0.22)", marginTop: -1.5 }} />
+        </div>
+        <div style={{ position: "absolute", top: 40, right: 40, display: "flex", flexDirection: "column", alignItems: "flex-end" }}>
+          <div style={{ width: 24, height: 1.5, background: "rgba(74,108,247,0.22)" }} />
+          <div style={{ width: 1.5, height: 24, background: "rgba(74,108,247,0.22)", marginTop: -1.5 }} />
+        </div>
+        <div style={{ position: "absolute", bottom: 40, left: 40, display: "flex", flexDirection: "column-reverse" }}>
+          <div style={{ width: 24, height: 1.5, background: "rgba(74,108,247,0.22)" }} />
+          <div style={{ width: 1.5, height: 24, background: "rgba(74,108,247,0.22)", marginBottom: -1.5 }} />
+        </div>
+        <div style={{ position: "absolute", bottom: 40, right: 40, display: "flex", flexDirection: "column-reverse", alignItems: "flex-end" }}>
+          <div style={{ width: 24, height: 1.5, background: "rgba(74,108,247,0.22)" }} />
+          <div style={{ width: 1.5, height: 24, background: "rgba(74,108,247,0.22)", marginBottom: -1.5 }} />
+        </div>
 
-        {/* ── Layer 5: Center vignette — keeps content dominant ─ */}
+        {/* Layer 5: Center vignette — keeps headline readable */}
         <div
           style={{
             position: "absolute",
             inset: 0,
             background:
-              "radial-gradient(ellipse 58% 48% at 50% 40%, rgba(255,255,255,0.62) 0%, transparent 100%)",
+              "radial-gradient(ellipse 62% 55% at 50% 40%, rgba(255,255,255,0.75) 0%, transparent 100%)",
           }}
         />
       </div>
 
+      {/* ══════════════════════════════════════════════════════════
+          CONTENT
+          ══════════════════════════════════════════════════════════ */}
       <div
         className="container-bionics"
         style={{ position: "relative", zIndex: 1 }}

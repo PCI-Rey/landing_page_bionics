@@ -208,7 +208,11 @@ type Product = typeof PRODUCTS[number];
 function ProductCard({ product, isMobile }: { product: Product; isMobile: boolean }) {
   return (
     <motion.a
-      href={product.id === "digital-signage" ? "/digital-signage" : `#${product.id}`}
+      href={
+          product.id === "digital-signage"   ? "/digital-signage"   :
+          product.id === "hospitality-tv"    ? "/hospitality-tv"    :
+          "/wayfinding"
+        }
       variants={cardVariants}
       whileHover={isMobile ? undefined : { scale: 1.02 }}
       transition={{ duration: 0.3 }}
