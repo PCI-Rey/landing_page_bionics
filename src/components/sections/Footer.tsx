@@ -75,7 +75,7 @@ const FOOTER_LINKS = [
 ] as const;
 
 const CONTACT_INFO = [
-  { label: "Jakarta, Indonesia", href: undefined, color: "#00D4AA", icon: "pin" },
+  { label: "Jl. Buni No.19, RT.9/RW.5, Mangga Besar, Kec. Taman Sari, Kota Jakarta Barat, Jakarta 11180", href: undefined, color: "#00D4AA", icon: "pin" },
   { label: "hello@bionics.id", href: "mailto:hello@bionics.id", color: "#4A6CF7", icon: "mail" },
   { label: "+62 21 1234 567", href: "tel:+62211234567", color: "#8B5CF6", icon: "phone" },
 ] as const;
