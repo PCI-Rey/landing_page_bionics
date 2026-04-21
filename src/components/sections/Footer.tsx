@@ -77,7 +77,7 @@ const FOOTER_LINKS = [
 const CONTACT_INFO = [
   { label: "Jl. Buni No.19, RT.9/RW.5, Mangga Besar, Kec. Taman Sari, Kota Jakarta Barat, Jakarta 11180", href: undefined, color: "#00D4AA", icon: "pin" },
   { label: "hello@bionics.id", href: "mailto:hello@bionics.id", color: "#4A6CF7", icon: "mail" },
-  { label: "+62 21 1234 567", href: "tel:+62211234567", color: "#8B5CF6", icon: "phone" },
+  { label: "0813-8969-5200", href: "tel:+62211234567", color: "#8B5CF6", icon: "phone" },
 ] as const;
 
 /* ── Animations ───────────────────────────────────────────── */
@@ -94,10 +94,10 @@ const containerVariants = {
 
 const itemVariants = {
   hidden: { opacity: 0, y: 20 },
-  visible: { 
-    opacity: 1, 
-    y: 0, 
-    transition: { duration: 0.6, ease: "easeOut" as const } 
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" as const }
   },
 };
 
@@ -258,14 +258,14 @@ export default function Footer() {
                           transition: "color 0.2s ease, transform 0.2s ease",
                           display: "inline-block",
                         }}
-                        onMouseEnter={(e) => { 
+                        onMouseEnter={(e) => {
                           const el = e.currentTarget as HTMLAnchorElement;
-                          el.style.color = "#4A6CF7"; 
+                          el.style.color = "#4A6CF7";
                           el.style.transform = "translateX(4px)";
                         }}
-                        onMouseLeave={(e) => { 
+                        onMouseLeave={(e) => {
                           const el = e.currentTarget as HTMLAnchorElement;
-                          el.style.color = "#4B5563"; 
+                          el.style.color = "#4B5563";
                           el.style.transform = "translateX(0)";
                         }}
                       >
@@ -288,11 +288,12 @@ export default function Footer() {
               </h4>
               <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: "1.25rem" }}>
                 {CONTACT_INFO.map(({ label, href, color, icon }) => (
-                  <li key={label} style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
+                  <li key={label} style={{ display: "flex", alignItems: "flex-start", gap: "0.75rem" }}>
                     <div style={{
                       display: "flex", alignItems: "center", justifyContent: "center",
                       width: 32, height: 32, borderRadius: "50%", background: `${color}15`,
                       flexShrink: 0,
+                      marginTop: "2px", // Slight offset to align with the first line of text
                     }}>
                       <ContactIcon icon={icon} color={color} />
                     </div>
@@ -304,6 +305,7 @@ export default function Footer() {
                           color: "#4B5563",
                           textDecoration: "none", transition: "color 0.2s ease",
                           wordBreak: "break-all",
+                          lineHeight: 1.5,
                         }}
                         onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = color; }}
                         onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#4B5563"; }}
@@ -314,6 +316,9 @@ export default function Footer() {
                       <span style={{
                         fontSize: isMobile ? "0.875rem" : "1rem",
                         color: "#4B5563",
+                        textAlign: "justify",
+                        lineHeight: 1.5,
+                        display: "block",
                       }}>
                         {label}
                       </span>
