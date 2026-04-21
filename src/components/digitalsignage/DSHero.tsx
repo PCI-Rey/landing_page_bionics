@@ -351,59 +351,6 @@ export default function DSHero() {
             margin: "0 auto",
           }}
         >
-          {/* Floating Stat — Top Left */}
-          <motion.div
-            variants={imageItemVariants}
-            style={{
-              position: "absolute",
-              top: isMobile ? -16 : -24,
-              left: isMobile ? 12 : -32,
-              zIndex: 3,
-              background: "rgba(255,255,255,0.95)",
-              backdropFilter: "blur(12px)",
-              border: "1px solid #E8EDF5",
-              borderRadius: 16,
-              padding: "0.75rem 1.25rem",
-              boxShadow: "0 8px 32px rgba(0,0,0,0.10)",
-              display: "flex",
-              alignItems: "center",
-              gap: "0.625rem",
-              whiteSpace: "nowrap",
-            }}
-          >
-            <span style={{ fontSize: "1.25rem", lineHeight: 1 }}>🖥️</span>
-            <div>
-              <p style={{ fontSize: "0.75rem", color: "#9CA3AF", margin: 0, fontWeight: 500 }}>Screens Managed</p>
-              <p style={{ fontSize: "1rem", color: "#0D0D0D", margin: 0, fontWeight: 700 }}>500+</p>
-            </div>
-          </motion.div>
-
-          {/* Floating Stat — Top Right */}
-          <motion.div
-            variants={imageItemVariants}
-            style={{
-              position: "absolute",
-              top: isMobile ? -16 : -24,
-              right: isMobile ? 12 : -32,
-              zIndex: 3,
-              background: "rgba(255,255,255,0.95)",
-              backdropFilter: "blur(12px)",
-              border: "1px solid #E8EDF5",
-              borderRadius: 16,
-              padding: "0.75rem 1.25rem",
-              boxShadow: "0 8px 32px rgba(0,0,0,0.10)",
-              display: "flex",
-              alignItems: "center",
-              gap: "0.625rem",
-              whiteSpace: "nowrap",
-            }}
-          >
-            <span style={{ fontSize: "1.25rem", lineHeight: 1 }}>⚡</span>
-            <div>
-              <p style={{ fontSize: "0.75rem", color: "#9CA3AF", margin: 0, fontWeight: 500 }}>Uptime</p>
-              <p style={{ fontSize: "1rem", color: "#0D0D0D", margin: 0, fontWeight: 700 }}>99.9%</p>
-            </div>
-          </motion.div>
 
           {/* Gradient border frame */}
           <motion.div
