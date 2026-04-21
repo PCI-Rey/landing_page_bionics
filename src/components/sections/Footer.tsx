@@ -290,16 +290,22 @@ export default function Footer() {
                 {CONTACT_INFO.map(({ label, href, color, icon }) => (
                   <li key={label} style={{ display: "flex", alignItems: "flex-start", gap: "0.75rem" }}>
                     <div style={{
-                      display: "flex", alignItems: "center", justifyContent: "center",
-                      width: 32, height: 32, borderRadius: "50%", background: `${color}15`,
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      height: "1.5rem", // Matches the line-height of the text (1.5 * 1rem)
                       flexShrink: 0,
-                      marginTop: "2px", // Slight offset to align with the first line of text
                     }}>
-                      <ContactIcon icon={icon} color={color} />
+                      <div style={{
+                        display: "flex", alignItems: "center", justifyContent: "center",
+                        width: 32, height: 32, borderRadius: "50%", background: `${color}15`,
+                      }}>
+                        <ContactIcon icon={icon} color={color} />
+                      </div>
                     </div>
                     {href ? (
                       <a
-                        href={href}
+                        href={icon === "phone" ? `tel:${label.replace(/[^0-9+]/g, '')}` : href}
                         style={{
                           fontSize: isMobile ? "0.875rem" : "1rem",
                           color: "#4B5563",
