@@ -250,12 +250,12 @@ export default function HTVHero() {
                 alignItems: "center",
                 gap: "0.4rem",
                 padding: "0.35rem 1rem",
-                background: "rgba(0,212,170,0.07)",
-                border: "1px solid rgba(0,212,170,0.18)",
+                background: "rgba(74,108,247,0.07)",
+                border: "1px solid rgba(74,108,247,0.18)",
                 borderRadius: 9999,
                 fontSize: "0.8125rem",
                 fontWeight: 600,
-                color: "#00D4AA",
+                color: "#4A6CF7",
                 letterSpacing: "0.03em",
               }}
             >
@@ -264,7 +264,7 @@ export default function HTVHero() {
                   width: 6,
                   height: 6,
                   borderRadius: "50%",
-                  backgroundColor: "#00D4AA",
+                  backgroundColor: "#4A6CF7",
                   display: "inline-block",
                 }}
                 aria-hidden="true"
