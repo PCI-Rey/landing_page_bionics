@@ -24,6 +24,11 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Bionics" }],
   robots: "index, follow",
+  icons: {
+    icon: "/assets/images/Logo_Bionic-removebg-preview.png",
+    shortcut: "/assets/images/Logo_Bionic-removebg-preview.png",
+    apple: "/assets/images/Logo_Bionic-removebg-preview.png",
+  },
   openGraph: {
     title: "Bionics - Choose Your Smart Solution",
     description:
@@ -56,6 +61,7 @@ export default function RootLayout({
         {/* Force light color scheme - prevents OS dark-mode from inverting our white theme */}
         <meta name="color-scheme" content="light" />
         <meta name="theme-color" content="#FFFFFF" />
+        <link rel="icon" href="/assets/images/Logo_Bionic-removebg-preview.png" type="image/png" />
       </head>
       <body
         style={{
