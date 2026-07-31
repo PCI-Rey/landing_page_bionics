@@ -93,7 +93,7 @@ export default function Navbar() {
           style={{ display: "flex", alignItems: "center", gap: "0.875rem", textDecoration: "none" }}
         >
           <Image
-            src="/assets/images/Brand_Bionics.png"
+            src="/assets/images/Logo_Bionic-removebg-preview.png"
             alt="Bionics Logo"
             width={44}
             height={44}

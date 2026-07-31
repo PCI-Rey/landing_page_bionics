@@ -103,7 +103,7 @@ export default function NavbarProduct() {
           }}
         >
           <Image
-            src="/assets/images/Brand_Bionics.png"
+            src="/assets/images/Logo_Bionic-removebg-preview.png"
             alt="Bionics Logo"
             width={44}
             height={44}
